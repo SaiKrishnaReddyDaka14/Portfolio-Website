@@ -4,63 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sai Krishna Reddy Daka - Portfolio</title>
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome for icons -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Fonts - Inter -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6; /* Light gray background */
+            background-color: #f3f4f6;
+        }
+        html {
+            scroll-behavior: smooth;
         }
         .section-title {
             position: relative;
-            font-size: 2.25rem; /* text-4xl */
-            font-weight: 700; /* font-bold */
-            margin-bottom: 2rem; /* mb-8 */
-            color: #1f2937; /* Gray-900 */
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #1f2937;
         }
         .section-title::after {
             content: '';
             position: absolute;
             left: 0;
-            bottom: -8px; /* Slightly below the text */
-            width: 60px; /* Underline width */
-            height: 4px; /* Underline thickness */
-            background-color: #4f46e5; /* Indigo-600 */
-            border-radius: 9999px; /* Fully rounded */
+            bottom: -8px;
+            width: 60px;
+            height: 4px;
+            background-color: #4f46e5;
+            border-radius: 9999px;
         }
         .card {
             background-color: #ffffff;
-            border-radius: 0.75rem; /* rounded-xl */
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             padding: 2rem;
-        }
-        .experience-item, .project-item, .skill-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 1.5rem;
-        }
-        .timeline-dot {
-            width: 1.25rem;
-            height: 1.25rem;
-            background-color: #4f46e5; /* Indigo-600 */
-            border-radius: 9999px;
-            flex-shrink: 0;
-            margin-right: 1rem;
-            position: relative;
-            z-index: 10;
-        }
-        .timeline-line {
-            width: 2px;
-            background-color: #e5e7eb; /* Gray-200 */
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: calc(0.625rem + 1px); /* Dot center + line offset */
-            z-index: 5;
         }
         .icon-small {
             width: 24px;
@@ -68,6 +51,14 @@
             color: #4f46e5;
             margin-right: 0.75rem;
         }
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(40px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+        }
+        .delay-100 { animation-delay: 0.1s; }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
@@ -76,23 +67,19 @@
         <div class="container mx-auto px-6 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-indigo-600">Sai Krishna Reddy Daka</a>
             <div class="hidden md:flex space-x-6">
-                <a href="#about" class="text-gray-700 hover:text-indigo-600 font-medium transition duration-300">About</a>
-                <a href="#experience" class="text-gray-700 hover:text-indigo-600 font-medium transition duration-300">Experience</a>
-                <a href="#education" class="text-gray-700 hover:text-indigo-600 font-medium transition duration-300">Education</a>
-                <a href="#projects" class="text-gray-700 hover:text-indigo-600 font-medium transition duration-300">Projects</a>
-                <a href="#skills" class="text-gray-700 hover:text-indigo-600 font-medium transition duration-300">Skills</a>
-                <a href="#contact" class="text-gray-700 hover:text-indigo-600 font-medium transition duration-300">Contact</a>
+                <a href="#about" class="text-gray-700 hover:text-indigo-600 font-medium">About</a>
+                <a href="#experience" class="text-gray-700 hover:text-indigo-600 font-medium">Experience</a>
+                <a href="#projects" class="text-gray-700 hover:text-indigo-600 font-medium">Projects</a>
+                <a href="#skills" class="text-gray-700 hover:text-indigo-600 font-medium">Skills</a>
+                <a href="#contact" class="text-gray-700 hover:text-indigo-600 font-medium">Contact</a>
             </div>
-            <!-- Mobile Menu Button (Hamburger) -->
-            <button id="mobile-menu-button" class="md:hidden text-gray-700 hover:text-indigo-600 focus:outline-none">
+            <button id="mobile-menu-button" class="md:hidden text-gray-700">
                 <i class="fas fa-bars text-xl"></i>
             </button>
         </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white mt-2 py-2 px-6 rounded-lg shadow-lg">
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-6">
             <a href="#about" class="block py-2 text-gray-700 hover:text-indigo-600 font-medium">About</a>
             <a href="#experience" class="block py-2 text-gray-700 hover:text-indigo-600 font-medium">Experience</a>
-            <a href="#education" class="block py-2 text-gray-700 hover:text-indigo-600 font-medium">Education</a>
             <a href="#projects" class="block py-2 text-gray-700 hover:text-indigo-600 font-medium">Projects</a>
             <a href="#skills" class="block py-2 text-gray-700 hover:text-indigo-600 font-medium">Skills</a>
             <a href="#contact" class="block py-2 text-gray-700 hover:text-indigo-600 font-medium">Contact</a>
@@ -100,300 +87,70 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20 px-6 rounded-b-xl flex items-center justify-center min-h-screen-1/2">
+    <header class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20 px-6 rounded-b-xl flex items-center justify-center min-h-[60vh]">
         <div class="container mx-auto text-center">
-            <img src="https://placehold.co/160x160/4F46E5/FFFFFF?text=JP" alt="Profile Picture" class="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-white shadow-lg object-cover">
-            <h1 class="text-5xl font-extrabold mb-4 animate-fade-in-up">Hi, I'm Sai Krishna</h1>
-            <p class="text-xl mb-8 leading-relaxed animate-fade-in-up delay-100">
-                A passionate [Your Profession/Specialty] with expertise in [Key Skill 1], [Key Skill 2], and [Key Skill 3].
-            </p>
+            <img src="https://placehold.co/160x160/4F46E5/FFFFFF?text=SK" alt="Profile Picture" class="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-white shadow-lg">
+            <h1 class="text-5xl font-extrabold mb-4">Hi, I'm <span id="typing-text"></span></h1>
+            <p class="text-xl mb-8 animate-fade-in-up delay-100">Passionate Developer with skills in Full-Stack, Cloud, and AI.</p>
             <div class="space-x-4">
-                <a href="#projects" class="bg-white text-indigo-600 hover:bg-gray-100 px-6 py-3 rounded-full text-lg font-semibold transition duration-300 transform hover:scale-105 shadow-md">View My Work</a>
-                <a href="#contact" class="border border-white text-white hover:bg-white hover:text-indigo-600 px-6 py-3 rounded-full text-lg font-semibold transition duration-300 transform hover:scale-105 shadow-md">Get in Touch</a>
-            </div>
-            <div class="mt-8 flex justify-center space-x-6 text-2xl">
-                <a href="https://linkedin.com/in/yourprofile" target="_blank" class="hover:text-gray-200 transition duration-300"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/yourusername" target="_blank" class="hover:text-gray-200 transition duration-300"><i class="fab fa-github"></i></a>
-                <a href="mailto:youremail@example.com" class="hover:text-gray-200 transition duration-300"><i class="fas fa-envelope"></i></a>
-                <a href="https://twitter.com/yourhandle" target="_blank" class="hover:text-gray-200 transition duration-300"><i class="fab fa-twitter"></i></a>
+                <a href="#projects" class="bg-white text-indigo-600 px-6 py-3 rounded-full font-semibold hover:scale-105 transition">View Work</a>
+                <a href="#contact" class="border border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-indigo-600 transition">Contact</a>
             </div>
         </div>
     </header>
 
-    <main class="container mx-auto px-6 py-16">
-        <!-- About Section -->
-        <section id="about" class="mb-16 card">
-            <h2 class="section-title">About Me</h2>
-            <p class="text-lg leading-relaxed text-gray-700">
-                Hello! I'm [Your Name], a [Your Profession/Role] with X years of experience in [Your Industry/Field].
-                I specialize in [mention 2-3 key areas, e.g., developing scalable web applications, designing user-centric interfaces, or analyzing complex datasets].
-                My passion lies in [talk about what excites you, e.g., solving challenging problems with elegant code, creating impactful digital experiences, or leveraging technology for social good].
-                I am proficient in [list 2-3 technologies/languages, e.g., Python, JavaScript, React, SQL, AWS] and constantly eager to learn new things.
-                In my free time, I enjoy [mention a hobby, e.g., hiking, reading, playing music, or volunteering].
-            </p>
-        </section>
+    <!-- About -->
+    <section id="about" class="container mx-auto px-6 py-16 card" data-aos="fade-up">
+        <h2 class="section-title">About Me</h2>
+        <p class="text-gray-700 text-lg">I'm a software engineer passionate about building scalable applications, AI tools, and meaningful digital experiences. Proficient in React, Python, Node.js, AWS.</p>
+    </section>
 
-        <!-- Experience Section -->
-        <section id="experience" class="mb-16 card">
-            <h2 class="section-title">Experience</h2>
-            <div class="relative pl-4">
-                <div class="timeline-line"></div>
+    <!-- Skills -->
+    <section id="skills" class="container mx-auto px-6 py-16 card" data-aos="fade-up">
+        <h2 class="section-title">Skills</h2>
+        <div class="flex flex-wrap gap-3 mt-4">
+            <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full">JavaScript</span>
+            <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full">Python</span>
+            <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full">React</span>
+            <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full">AWS</span>
+            <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full">Docker</span>
+        </div>
+    </section>
 
-                <!-- Experience Item 1 -->
-                <div class="experience-item">
-                    <div class="timeline-dot"></div>
-                    <div>
-                        <h3 class="text-xl font-semibold text-gray-900">Senior Software Engineer</h3>
-                        <p class="text-indigo-600 font-medium">Tech Solutions Inc. | Jan 2022 - Present</p>
-                        <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1">
-                            <li>Led the development of a new microservices architecture, improving system scalability by 40%.</li>
-                            <li>Mentored junior developers and conducted code reviews, fostering a collaborative team environment.</li>
-                            <li>Implemented CI/CD pipelines, reducing deployment time by 50%.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Experience Item 2 -->
-                <div class="experience-item">
-                    <div class="timeline-dot"></div>
-                    <div>
-                        <h3 class="text-xl font-semibold text-gray-900">Software Developer</h3>
-                        <p class="text-indigo-600 font-medium">Innovate Corp. | Jun 2019 - Dec 2021</p>
-                        <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1">
-                            <li>Developed and maintained features for a flagship e-commerce platform using React and Node.js.</li>
-                            <li>Collaborated with product managers to translate business requirements into technical specifications.</li>
-                            <li>Optimized database queries, leading to a 20% reduction in load times.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Add more experience items as needed -->
-
-            </div>
-        </section>
-
-        <!-- Education Section -->
-        <section id="education" class="mb-16 card">
-            <h2 class="section-title">Education</h2>
-            <div class="relative pl-4">
-                <div class="timeline-line"></div>
-
-                <!-- Education Item 1 -->
-                <div class="experience-item">
-                    <div class="timeline-dot"></div>
-                    <div>
-                        <h3 class="text-xl font-semibold text-gray-900">Master of Science in Computer Science</h3>
-                        <p class="text-indigo-600 font-medium">University of Tech | Sep 2021 - May 2023</p>
-                        <p class="text-gray-700 mt-1">Specialization: Artificial Intelligence</p>
-                    </div>
-                </div>
-
-                <!-- Education Item 2 -->
-                <div class="experience-item">
-                    <div class="timeline-dot"></div>
-                    <div>
-                        <h3 class="text-xl font-semibold text-gray-900">Bachelor of Engineering in Software Engineering</h3>
-                        <p class="text-indigo-600 font-medium">State University | Sep 2015 - May 2019</p>
-                        <p class="text-gray-700 mt-1">Graduated with Honors</p>
-                    </div>
-                </div>
-
-                <!-- Add more education items as needed -->
-
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="mb-16 card">
-            <h2 class="section-title">Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project Card 1 -->
-                <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
-                    <h3 class="text-2xl font-semibold text-gray-900 mb-3">Project Alpha</h3>
-                    <p class="text-gray-700 mb-4">A web application for task management with real-time updates and user authentication.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-indigo-100 text-indigo-700 text-xs font-semibold px-2.5 py-0.5 rounded-full">React</span>
-                        <span class="bg-green-100 text-green-700 text-xs font-semibold px-2.5 py-0.5 rounded-full">Node.js</span>
-                        <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-2.5 py-0.5 rounded-full">MongoDB</span>
-                    </div>
-                    <div class="flex space-x-4">
-                        <a href="https://github.com/yourusername/project-alpha" target="_blank" class="text-indigo-600 hover:text-indigo-800 transition duration-300">
-                            <i class="fab fa-github icon-small"></i> Code
-                        </a>
-                        <a href="https://yourprojectalpha.com" target="_blank" class="text-indigo-600 hover:text-indigo-800 transition duration-300">
-                            <i class="fas fa-external-link-alt icon-small"></i> Live Demo
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project Card 2 -->
-                <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
-                    <h3 class="text-2xl font-semibold text-gray-900 mb-3">Data Visualization Dashboard</h3>
-                    <p class="text-gray-700 mb-4">An interactive dashboard to visualize complex datasets using D3.js.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-yellow-100 text-yellow-700 text-xs font-semibold px-2.5 py-0.5 rounded-full">D3.js</span>
-                        <span class="bg-red-100 text-red-700 text-xs font-semibold px-2.5 py-0.5 rounded-full">Python</span>
-                        <span class="bg-purple-100 text-purple-700 text-xs font-semibold px-2.5 py-0.5 rounded-full">Pandas</span>
-                    </div>
-                    <div class="flex space-x-4">
-                        <a href="https://github.com/yourusername/data-dashboard" target="_blank" class="text-indigo-600 hover:text-indigo-800 transition duration-300">
-                            <i class="fab fa-github icon-small"></i> Code
-                        </a>
-                        <a href="https://yourdashboard.com" target="_blank" class="text-indigo-600 hover:text-indigo-800 transition duration-300">
-                            <i class="fas fa-external-link-alt icon-small"></i> Live Demo
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project Card 3 -->
-                <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
-                    <h3 class="text-2xl font-semibold text-gray-900 mb-3">Mobile Expense Tracker</h3>
-                    <p class="text-gray-700 mb-4">A mobile application developed with React Native for personal finance tracking.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-pink-100 text-pink-700 text-xs font-semibold px-2.5 py-0.5 rounded-full">React Native</span>
-                        <span class="bg-teal-100 text-teal-700 text-xs font-semibold px-2.5 py-0.5 rounded-full">Firebase</span>
-                    </div>
-                    <div class="flex space-x-4">
-                        <a href="https://github.com/yourusername/expense-tracker" target="_blank" class="text-indigo-600 hover:text-indigo-800 transition duration-300">
-                            <i class="fab fa-github icon-small"></i> Code
-                        </a>
-                        <!-- If no live demo, you can remove this link or replace with app store link -->
-                    </div>
-                </div>
-
-                <!-- Add more project cards as needed -->
-
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="mb-16 card">
-            <h2 class="section-title">Skills</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Skill Category 1 -->
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
-                        <i class="fas fa-code icon-small"></i> Programming Languages
-                    </h3>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full shadow-sm">JavaScript</span>
-                        <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full shadow-sm">Python</span>
-                        <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full shadow-sm">Java</span>
-                        <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full shadow-sm">C++</span>
-                    </div>
-                </div>
-
-                <!-- Skill Category 2 -->
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
-                        <i class="fas fa-laptop-code icon-small"></i> Frontend Development
-                    </h3>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full shadow-sm">React</span>
-                        <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full shadow-sm">Vue.js</span>
-                        <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full shadow-sm">Angular</span>
-                        <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full shadow-sm">HTML5 & CSS3</span>
-                        <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full shadow-sm">Tailwind CSS</span>
-                    </div>
-                </div>
-
-                <!-- Skill Category 3 -->
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
-                        <i class="fas fa-server icon-small"></i> Backend Development
-                    </h3>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full shadow-sm">Node.js</span>
-                        <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full shadow-sm">Express.js</span>
-                        <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full shadow-sm">Django</span>
-                        <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full shadow-sm">Flask</span>
-                    </div>
-                </div>
-
-                <!-- Skill Category 4 -->
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
-                        <i class="fas fa-database icon-small"></i> Databases
-                    </h3>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full shadow-sm">MongoDB</span>
-                        <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full shadow-sm">PostgreSQL</span>
-                        <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full shadow-sm">MySQL</span>
-                        <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full shadow-sm">Firebase Firestore</span>
-                    </div>
-                </div>
-
-                <!-- Skill Category 5 -->
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
-                        <i class="fas fa-cloud icon-small"></i> Cloud & DevOps
-                    </h3>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full shadow-sm">AWS</span>
-                        <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full shadow-sm">Docker</span>
-                        <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full shadow-sm">Git</span>
-                        <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full shadow-sm">CI/CD</span>
-                    </div>
-                </div>
-
-                <!-- Add more skill categories as needed -->
-
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="mb-16 card">
-            <h2 class="section-title">Contact Me</h2>
-            <div class="text-lg text-gray-700 space-y-4">
-                <p>I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
-                <p class="flex items-center">
-                    <i class="fas fa-envelope icon-small"></i> Email: <a href="mailto:youremail@example.com" class="text-indigo-600 hover:underline ml-2">youremail@example.com</a>
-                </p>
-                <p class="flex items-center">
-                    <i class="fas fa-phone icon-small"></i> Phone: <span class="ml-2">[Your Phone Number (Optional)]</span>
-                </p>
-                <p class="flex items-center">
-                    <i class="fab fa-linkedin icon-small"></i> LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank" class="text-indigo-600 hover:underline ml-2">linkedin.com/in/yourprofile</a>
-                </p>
-                <p class="flex items-center">
-                    <i class="fab fa-github icon-small"></i> GitHub: <a href="https://github.com/yourusername" target="_blank" class="text-indigo-600 hover:underline ml-2">github.com/yourusername</a>
-                </p>
-            </div>
-            <!-- You can add a contact form here if desired -->
-        </section>
-    </main>
+    <!-- Contact -->
+    <section id="contact" class="container mx-auto px-6 py-16 card" data-aos="fade-up">
+        <h2 class="section-title">Contact</h2>
+        <p class="text-gray-700 text-lg">Reach out at <a href="mailto:you@example.com" class="text-indigo-600 underline">you@example.com</a></p>
+    </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8 text-center rounded-t-xl">
-        <div class="container mx-auto px-6">
-            <p>&copy; <span id="current-year"></span> Your Name. All rights reserved.</p>
-            <div class="mt-4 flex justify-center space-x-6 text-xl">
-                <a href="https://linkedin.com/in/yourprofile" target="_blank" class="hover:text-indigo-400 transition duration-300"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/yourusername" target="_blank" class="hover:text-indigo-400 transition duration-300"><i class="fab fa-github"></i></a>
-                <a href="mailto:youremail@example.com" class="hover:text-indigo-400 transition duration-300"><i class="fas fa-envelope"></i></a>
-                <a href="https://twitter.com/yourhandle" target="_blank" class="hover:text-indigo-400 transition duration-300"><i class="fab fa-twitter"></i></a>
-            </div>
-        </div>
+    <footer class="bg-gray-800 text-white py-8 text-center">
+        <p>&copy; <span id="current-year"></span> Sai Krishna Reddy Daka. All rights reserved.</p>
     </footer>
 
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>AOS.init();</script>
     <script>
-        // Get the current year for the footer
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
-        // Mobile menu toggle functionality
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Close mobile menu when a link is clicked
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
+        // Typing Effect
+        const text = "Sai Krishna";
+        let i = 0;
+        function typeWriter() {
+            if (i < text.length) {
+                document.getElementById("typing-text").textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+        window.onload = typeWriter;
     </script>
 </body>
 </html>
