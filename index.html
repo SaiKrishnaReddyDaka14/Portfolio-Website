@@ -90,67 +90,118 @@
             transform: scale(1);
         }
 
-        /* Existing hero section animation (CSS keyframes) */
-        @keyframes fadeInMoveUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* Hero section specific styles for the image layout */
+        .hero-img-mask {
+            /* This is a common way to create circular/curved image shapes */
+            -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50"/></svg>');
+            mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50"/></svg>');
+            mask-mode: alpha; /* or luminance */
+            background-color: transparent; /* Needed if mask-image is used with mask-mode */
+            border-radius: 50%; /* Fallback for older browsers or if mask-image causes issues */
+            overflow: hidden; /* Ensures image respects the mask/border-radius */
         }
-        .hero-animate-fade-in-up { /* Renamed to avoid conflict */
+        /* Further styling for the circular image with border */
+        .hero-image-container {
+            width: 300px; /* Adjust as needed */
+            height: 300px; /* Adjust as needed */
+            border-radius: 50%;
+            overflow: hidden;
+            border: 8px solid rgba(255, 255, 255, 0.1); /* Subtle white border */
+            box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.05); /* Inner white shadow */
+        }
+        .hero-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        /* Hero text animations for initial load */
+        @keyframes fadeInMoveUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInScaleIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .hero-animate-fade-in-up {
             animation: fadeInMoveUp 0.8s ease-out forwards;
         }
-        .hero-animate-fade-in-up.delay-100 { /* Renamed to avoid conflict */
-            animation-delay: 0.1s;
+        .hero-animate-fade-in-up.delay-100 { animation-delay: 0.1s; }
+        .hero-animate-fade-in-up.delay-200 { animation-delay: 0.2s; }
+        .hero-animate-fade-in-up.delay-300 { animation-delay: 0.3s; }
+
+        /* Animation for the hero image */
+        .hero-image-animate {
+            opacity: 0;
+            transform: translateX(50px);
+            animation: slideInRight 1s ease-out forwards;
+            animation-delay: 0.4s; /* Delay it slightly after text */
+        }
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* Hide scrollbars for a cleaner look if content fits, but allow scroll if it overflows */
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
-    <nav class="bg-white shadow-sm py-4 sticky top-0 z-50 rounded-b-xl">
+    <nav class="bg-black text-white shadow-md py-4 sticky top-0 z-50 rounded-b-xl">
         <div class="container mx-auto px-6 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-indigo-600">Sai Krishna Reddy Daka</a>
-            <div class="hidden md:flex space-x-6">
-                <a href="#about" class="text-gray-700 hover:text-indigo-600 font-medium transition duration-300">About</a>
-                <a href="#experience" class="text-gray-700 hover:text-indigo-600 font-medium transition duration-300">Experience</a>
-                <a href="#education" class="text-gray-700 hover:text-indigo-600 font-medium transition duration-300">Education</a>
-                <a href="#projects" class="text-gray-700 hover:text-indigo-600 font-medium transition duration-300">Projects</a>
-                <a href="#skills" class="text-gray-700 hover:text-indigo-600 font-medium transition duration-300">Skills</a>
-                <a href="#contact" class="text-gray-700 hover:text-indigo-600 font-medium transition duration-300">Contact</a>
+            <div class="flex items-center space-x-2">
+                <a href="#" class="text-2xl font-bold text-white">Eric Waters</a>
+                <span class="text-indigo-400 text-2xl font-bold">&lt;&gt;</span>
             </div>
-            <button id="mobile-menu-button" class="md:hidden text-gray-700 hover:text-indigo-600 focus:outline-none">
+            <div class="hidden md:flex space-x-6">
+                <a href="#experience" class="text-gray-300 hover:text-indigo-400 font-medium transition duration-300">Experience</a>
+                <a href="#education" class="text-gray-300 hover:text-indigo-400 font-medium transition duration-300">Education</a>
+                <a href="#skills" class="text-gray-300 hover:text-indigo-400 font-medium transition duration-300">Skills</a>
+                <a href="#projects" class="text-gray-300 hover:text-indigo-400 font-medium transition duration-300">Projects</a>
+                <a href="#contact" class="text-gray-300 hover:text-indigo-400 font-medium transition duration-300">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-indigo-400 focus:outline-none">
                 <i class="fas fa-bars text-xl"></i>
             </button>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-white mt-2 py-2 px-6 rounded-lg shadow-lg">
-            <a href="#about" class="block py-2 text-gray-700 hover:text-indigo-600 font-medium">About</a>
-            <a href="#experience" class="block py-2 text-gray-700 hover:text-indigo-600 font-medium">Experience</a>
-            <a href="#education" class="block py-2 text-gray-700 hover:text-indigo-600 font-medium">Education</a>
-            <a href="#projects" class="block py-2 text-gray-700 hover:text-indigo-600 font-medium">Projects</a>
-            <a href="#skills" class="block py-2 text-gray-700 hover:text-indigo-600 font-medium">Skills</a>
-            <a href="#contact" class="block py-2 text-gray-700 hover:text-indigo-600 font-medium">Contact</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 mt-2 py-2 px-6 rounded-lg shadow-lg">
+            <a href="#experience" class="block py-2 text-gray-300 hover:text-indigo-400 font-medium">Experience</a>
+            <a href="#education" class="block py-2 text-gray-300 hover:text-indigo-400 font-medium">Education</a>
+            <a href="#skills" class="block py-2 text-gray-300 hover:text-indigo-400 font-medium">Skills</a>
+            <a href="#projects" class="block py-2 text-gray-300 hover:text-indigo-400 font-medium">Projects</a>
+            <a href="#contact" class="block py-2 text-gray-300 hover:text-indigo-400 font-medium">Contact</a>
         </div>
     </nav>
 
-    <header class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20 px-6 rounded-b-xl flex items-center justify-center min-h-screen-1/2">
-        <div class="container mx-auto text-center">
-            <img src="https://placehold.co/160x160/4F46E5/FFFFFF?text=JP" alt="Profile Picture" class="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-white shadow-lg object-cover">
-            <h1 class="text-5xl font-extrabold mb-4 hero-animate-fade-in-up">Hi, I'm Sai Krishna</h1>
-            <p class="text-xl mb-8 leading-relaxed hero-animate-fade-in-up delay-100">
-                A passionate [Your Profession/Specialty] with expertise in [Key Skill 1], [Key Skill 2], and [Key Skill 3].
-            </p>
-            <div class="space-x-4">
-                <a href="#projects" class="bg-white text-indigo-600 hover:bg-gray-100 px-6 py-3 rounded-full text-lg font-semibold transition duration-300 transform hover:scale-105 shadow-md">View My Work</a>
-                <a href="#contact" class="border border-white text-white hover:bg-white hover:text-indigo-600 px-6 py-3 rounded-full text-lg font-semibold transition duration-300 transform hover:scale-105 shadow-md">Get in Touch</a>
+    <header class="bg-gray-900 text-white py-20 px-6 min-h-screen flex items-center justify-center">
+        <div class="container mx-auto flex flex-col md:flex-row items-center md:justify-between gap-12">
+            <div class="text-center md:text-left flex-1 max-w-2xl">
+                <h1 class="text-6xl md:text-7xl font-extrabold mb-4 leading-tight hero-animate-fade-in-up">
+                    Hi, I'm Eric <span class="text-indigo-400">&lt;&gt;</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 leading-relaxed text-gray-300 hero-animate-fade-in-up delay-100">
+                    I build powerful backend systems and intuitive interfaces — always with clean, optimized code and a focus on impact.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-6 mb-8 hero-animate-fade-in-up delay-200">
+                    <a href="/path/to/your/resume.pdf" download class="bg-indigo-600 text-white hover:bg-indigo-700 px-8 py-3 rounded-lg text-xl font-semibold transition duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center">
+                        <i class="fas fa-download mr-3"></i> Resume
+                    </a>
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank" class="border-2 border-indigo-600 text-indigo-300 hover:bg-indigo-600 hover:text-white px-8 py-3 rounded-lg text-xl font-semibold transition duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center">
+                        <i class="fab fa-linkedin mr-3"></i> LinkedIn
+                    </a>
+                </div>
+                <div class="mt-8 flex justify-center md:justify-start space-x-6 text-3xl hero-animate-fade-in-up delay-300">
+                    <a href="https://github.com/yourusername" target="_blank" class="hover:text-indigo-400 transition duration-300"><i class="fab fa-github"></i></a>
+                    <a href="mailto:youremail@example.com" class="hover:text-indigo-400 transition duration-300"><i class="fas fa-envelope"></i></a>
+                    <a href="https://twitter.com/yourhandle" target="_blank" class="hover:text-indigo-400 transition duration-300"><i class="fab fa-twitter"></i></a>
+                </div>
             </div>
-            <div class="mt-8 flex justify-center space-x-6 text-2xl">
-                <a href="https://linkedin.com/in/yourprofile" target="_blank" class="hover:text-gray-200 transition duration-300"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/yourusername" target="_blank" class="hover:text-gray-200 transition duration-300"><i class="fab fa-github"></i></a>
-                <a href="mailto:youremail@example.com" class="hover:text-gray-200 transition duration-300"><i class="fas fa-envelope"></i></a>
-                <a href="https://twitter.com/yourhandle" target="_blank" class="hover:text-gray-200 transition duration-300"><i class="fab fa-twitter"></i></a>
+
+            <div class="flex-shrink-0 hero-image-container hero-image-animate">
+                <img src="https://via.placeholder.com/600x600/1a202c/FFFFFF?text=Your+Photo" alt="Profile Picture of Eric Waters" class="w-full h-full object-cover">
             </div>
         </div>
     </header>
@@ -159,13 +210,10 @@
         <section id="about" class="mb-16 card animate-on-scroll">
             <h2 class="section-title">About Me</h2>
             <p class="text-lg leading-relaxed text-gray-700">
-                Hello! I'm [Your Name], a [Your Profession/Role] with X years of experience in [Your Industry/Field].
-                I specialize in [mention 2-3 key areas, e.g., developing scalable web applications, designing user-centric interfaces, or analyzing complex datasets].
-                My passion lies in [talk about what excites you, e.g., solving challenging problems with elegant code, creating impactful digital experiences, or leveraging technology for social good].
-                I am proficient in [list 2-3 technologies/languages, e.g., Python, JavaScript, React, SQL, AWS] and constantly eager to learn new things.
-                In my free time, I enjoy [mention a hobby, e.g., hiking, reading, playing music, or volunteering].
+                Building on the introduction above, I bring a unique blend of creativity and technical prowess to every project. My journey in software development has been driven by a passion for [specific area, e.g., crafting efficient algorithms, building delightful user experiences, or leveraging data for insightful solutions]. I thrive in dynamic environments where continuous learning and collaboration are valued. When I'm not coding, you can find me [mention a hobby or interest, e.g., exploring new technologies, hiking local trails, or experimenting with new recipes].
             </p>
         </section>
+
 
         <section id="experience" class="mb-16 card">
             <h2 class="section-title animate-on-scroll">Experience</h2>
@@ -198,6 +246,19 @@
                     </div>
                 </div>
 
+                <div class="experience-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900">Graduate Software Engineering Intern</h3>
+                        <p class="text-indigo-600 font-medium">Dell Technologies | June 2022 - August 2022</p>
+                        <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1">
+                            <li>Implemented OAuth 2.0 SSO and fine-grained authorization across enterprise apps and APIs, unifying authentication and enhancing security and compliance.</li>
+                            <li>Collaborated closely with cross-functional teams to integrate secure authentication solutions into existing systems, ensuring seamless user experience.</li>
+                            <li>Conducted thorough testing and debugging, identifying and resolving critical security vulnerabilities.</li>
+                        </ul>
+                    </div>
+                </div>
+
                 </div>
         </section>
 
@@ -209,9 +270,20 @@
                 <div class="experience-item animate-on-scroll">
                     <div class="timeline-dot"></div>
                     <div>
+                        <h3 class="text-xl font-semibold text-gray-900">Computer Science (Big Data Systems), M.S.</h3>
+                        <p class="text-indigo-600 font-medium">Arizona State University | August 2022 - May 2023</p>
+                        <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1">
+                            <li>Studied Data Mining, Data Processing at Scale, Statistical Machine Learning, Data Visualization, Database Management System Implementation, and Mobile Computing.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div>
                         <h3 class="text-xl font-semibold text-gray-900">Master of Science in Computer Science</h3>
                         <p class="text-indigo-600 font-medium">University of Tech | Sep 2021 - May 2023</p>
-                        <p class="text-gray-700 mt-1">Specialization: Artificial Intelligence</p>
+                        <p class="text-gray-700 mt-1">Specialization: Artificial Intelligence (example, if different from ASU)</p>
                     </div>
                 </div>
 
@@ -401,10 +473,10 @@
             });
         });
 
-        // --- Intersection Observer for scroll animations (Corrected Logic) ---
+        // --- Intersection Observer for scroll animations ---
 
-        // Select all elements that should animate on scroll
-        const animatedElements = document.querySelectorAll('.animate-on-scroll, .project-card-animate');
+        const animatedElements = document.querySelectorAll('.animate-on-scroll');
+        const projectCards = document.querySelectorAll('.project-card-animate'); // Keep separate for staggered effect
 
         const observerOptions = {
             root: null, // relative to the viewport
@@ -415,22 +487,18 @@
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    // Element is now in view
                     entry.target.classList.add('is-visible');
                 } else {
-                    // Element has scrolled out of view, reset its state to re-animate on re-entry
                     entry.target.classList.remove('is-visible');
                 }
             });
         }, observerOptions);
 
-        // Apply observer to all target elements
         animatedElements.forEach(element => {
             observer.observe(element);
         });
 
-        // Special handling for staggered project card animation (if desired)
-        const projectCards = document.querySelectorAll('.project-card-animate');
+        // Special handling for staggered project card animation
         const projectObserverOptions = {
             root: null,
             rootMargin: '0px',
@@ -440,13 +508,11 @@
         const projectObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    // Apply staggered effect only when it enters view
                     const index = Array.from(projectCards).indexOf(entry.target);
                     setTimeout(() => {
                         entry.target.classList.add('is-visible');
                     }, index * 150); // Stagger by 150ms per card
                 } else {
-                    // Reset when it leaves view, so it can animate again
                     entry.target.classList.remove('is-visible');
                 }
             });
