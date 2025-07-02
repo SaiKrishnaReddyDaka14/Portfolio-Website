@@ -66,29 +66,31 @@
             margin-right: 0.75rem;
         }
 
-        /* Animation Classes */
-        .animated-section {
+        /* Base state for animated elements (hidden/off-screen) */
+        .animate-on-scroll {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
-        .animated-section.is-visible {
+
+        /* State when element is visible */
+        .animate-on-scroll.is-visible {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* Optional: Different animation for projects */
-        .project-card-animated {
+        /* Specific animation for project cards if desired, with staggered effect potential */
+        .project-card-animate {
             opacity: 0;
             transform: scale(0.95);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
-        .project-card-animated.is-visible {
+        .project-card-animate.is-visible {
             opacity: 1;
             transform: scale(1);
         }
 
-        /* For the hero section elements already animated, if you want to keep them */
+        /* Existing hero section animation (CSS keyframes) */
         @keyframes fadeInMoveUp {
             from {
                 opacity: 0;
@@ -99,10 +101,10 @@
                 transform: translateY(0);
             }
         }
-        .animate-fade-in-up {
+        .hero-animate-fade-in-up { /* Renamed to avoid conflict */
             animation: fadeInMoveUp 0.8s ease-out forwards;
         }
-        .animate-fade-in-up.delay-100 {
+        .hero-animate-fade-in-up.delay-100 { /* Renamed to avoid conflict */
             animation-delay: 0.1s;
         }
     </style>
@@ -136,8 +138,8 @@
     <header class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20 px-6 rounded-b-xl flex items-center justify-center min-h-screen-1/2">
         <div class="container mx-auto text-center">
             <img src="https://placehold.co/160x160/4F46E5/FFFFFF?text=JP" alt="Profile Picture" class="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-white shadow-lg object-cover">
-            <h1 class="text-5xl font-extrabold mb-4 animate-fade-in-up">Hi, I'm Sai Krishna</h1>
-            <p class="text-xl mb-8 leading-relaxed animate-fade-in-up delay-100">
+            <h1 class="text-5xl font-extrabold mb-4 hero-animate-fade-in-up">Hi, I'm Sai Krishna</h1>
+            <p class="text-xl mb-8 leading-relaxed hero-animate-fade-in-up delay-100">
                 A passionate [Your Profession/Specialty] with expertise in [Key Skill 1], [Key Skill 2], and [Key Skill 3].
             </p>
             <div class="space-x-4">
@@ -154,7 +156,7 @@
     </header>
 
     <main class="container mx-auto px-6 py-16">
-        <section id="about" class="mb-16 card animated-section">
+        <section id="about" class="mb-16 card animate-on-scroll">
             <h2 class="section-title">About Me</h2>
             <p class="text-lg leading-relaxed text-gray-700">
                 Hello! I'm [Your Name], a [Your Profession/Role] with X years of experience in [Your Industry/Field].
@@ -165,12 +167,12 @@
             </p>
         </section>
 
-        <section id="experience" class="mb-16 card animated-section">
-            <h2 class="section-title">Experience</h2>
+        <section id="experience" class="mb-16 card">
+            <h2 class="section-title animate-on-scroll">Experience</h2>
             <div class="relative pl-4">
                 <div class="timeline-line"></div>
 
-                <div class="experience-item animated-section">
+                <div class="experience-item animate-on-scroll">
                     <div class="timeline-dot"></div>
                     <div>
                         <h3 class="text-xl font-semibold text-gray-900">Senior Software Engineer</h3>
@@ -183,7 +185,7 @@
                     </div>
                 </div>
 
-                <div class="experience-item animated-section">
+                <div class="experience-item animate-on-scroll">
                     <div class="timeline-dot"></div>
                     <div>
                         <h3 class="text-xl font-semibold text-gray-900">Software Developer</h3>
@@ -199,12 +201,12 @@
                 </div>
         </section>
 
-        <section id="education" class="mb-16 card animated-section">
-            <h2 class="section-title">Education</h2>
+        <section id="education" class="mb-16 card">
+            <h2 class="section-title animate-on-scroll">Education</h2>
             <div class="relative pl-4">
                 <div class="timeline-line"></div>
 
-                <div class="experience-item animated-section">
+                <div class="experience-item animate-on-scroll">
                     <div class="timeline-dot"></div>
                     <div>
                         <h3 class="text-xl font-semibold text-gray-900">Master of Science in Computer Science</h3>
@@ -213,7 +215,7 @@
                     </div>
                 </div>
 
-                <div class="experience-item animated-section">
+                <div class="experience-item animate-on-scroll">
                     <div class="timeline-dot"></div>
                     <div>
                         <h3 class="text-xl font-semibold text-gray-900">Bachelor of Engineering in Software Engineering</h3>
@@ -225,10 +227,10 @@
                 </div>
         </section>
 
-        <section id="projects" class="mb-16 card animated-section">
-            <h2 class="section-title">Projects</h2>
+        <section id="projects" class="mb-16 card">
+            <h2 class="section-title animate-on-scroll">Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300 project-card-animated">
+                <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300 project-card-animate">
                     <h3 class="text-2xl font-semibold text-gray-900 mb-3">Project Alpha</h3>
                     <p class="text-gray-700 mb-4">A web application for task management with real-time updates and user authentication.</p>
                     <div class="flex flex-wrap gap-2 mb-4">
@@ -246,7 +248,7 @@
                     </div>
                 </div>
 
-                <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300 project-card-animated">
+                <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300 project-card-animate">
                     <h3 class="text-2xl font-semibold text-gray-900 mb-3">Data Visualization Dashboard</h3>
                     <p class="text-gray-700 mb-4">An interactive dashboard to visualize complex datasets using D3.js.</p>
                     <div class="flex flex-wrap gap-2 mb-4">
@@ -264,7 +266,7 @@
                     </div>
                 </div>
 
-                <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300 project-card-animated">
+                <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300 project-card-animate">
                     <h3 class="text-2xl font-semibold text-gray-900 mb-3">Mobile Expense Tracker</h3>
                     <p class="text-gray-700 mb-4">A mobile application developed with React Native for personal finance tracking.</p>
                     <div class="flex flex-wrap gap-2 mb-4">
@@ -281,10 +283,10 @@
                 </div>
         </section>
 
-        <section id="skills" class="mb-16 card animated-section">
-            <h2 class="section-title">Skills</h2>
+        <section id="skills" class="mb-16 card">
+            <h2 class="section-title animate-on-scroll">Skills</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="animated-section">
+                <div class="animate-on-scroll">
                     <h3 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
                         <i class="fas fa-code icon-small"></i> Programming Languages
                     </h3>
@@ -296,7 +298,7 @@
                     </div>
                 </div>
 
-                <div class="animated-section">
+                <div class="animate-on-scroll">
                     <h3 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
                         <i class="fas fa-laptop-code icon-small"></i> Frontend Development
                     </h3>
@@ -309,7 +311,7 @@
                     </div>
                 </div>
 
-                <div class="animated-section">
+                <div class="animate-on-scroll">
                     <h3 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
                         <i class="fas fa-server icon-small"></i> Backend Development
                     </h3>
@@ -321,7 +323,7 @@
                     </div>
                 </div>
 
-                <div class="animated-section">
+                <div class="animate-on-scroll">
                     <h3 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
                         <i class="fas fa-database icon-small"></i> Databases
                     </h3>
@@ -333,7 +335,7 @@
                     </div>
                 </div>
 
-                <div class="animated-section">
+                <div class="animate-on-scroll">
                     <h3 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
                         <i class="fas fa-cloud icon-small"></i> Cloud & DevOps
                     </h3>
@@ -348,7 +350,7 @@
                 </div>
         </section>
 
-        <section id="contact" class="mb-16 card animated-section">
+        <section id="contact" class="mb-16 card animate-on-scroll">
             <h2 class="section-title">Contact Me</h2>
             <div class="text-lg text-gray-700 space-y-4">
                 <p>I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
@@ -399,9 +401,10 @@
             });
         });
 
-        // Intersection Observer for scroll animations
-        const sections = document.querySelectorAll('.animated-section');
-        const projectCards = document.querySelectorAll('.project-card-animated');
+        // --- Intersection Observer for scroll animations (Corrected Logic) ---
+
+        // Select all elements that should animate on scroll
+        const animatedElements = document.querySelectorAll('.animate-on-scroll, .project-card-animate');
 
         const observerOptions = {
             root: null, // relative to the viewport
@@ -412,32 +415,44 @@
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
+                    // Element is now in view
                     entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target); // Stop observing once animated
+                } else {
+                    // Element has scrolled out of view, reset its state to re-animate on re-entry
+                    entry.target.classList.remove('is-visible');
                 }
             });
         }, observerOptions);
 
-        sections.forEach(section => {
-            observer.observe(section);
+        // Apply observer to all target elements
+        animatedElements.forEach(element => {
+            observer.observe(element);
         });
 
-        projectCards.forEach((card, index) => {
-            const projectObserverOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.2 // Trigger when 20% of the project card is visible
-            };
-            const projectObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        setTimeout(() => { // Add a slight delay for staggered effect
-                            entry.target.classList.add('is-visible');
-                        }, index * 150); // Stagger by 150ms per card
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, projectObserverOptions);
+        // Special handling for staggered project card animation (if desired)
+        const projectCards = document.querySelectorAll('.project-card-animate');
+        const projectObserverOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.2 // Trigger when 20% of the project card is visible
+        };
+
+        const projectObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Apply staggered effect only when it enters view
+                    const index = Array.from(projectCards).indexOf(entry.target);
+                    setTimeout(() => {
+                        entry.target.classList.add('is-visible');
+                    }, index * 150); // Stagger by 150ms per card
+                } else {
+                    // Reset when it leaves view, so it can animate again
+                    entry.target.classList.remove('is-visible');
+                }
+            });
+        }, projectObserverOptions);
+
+        projectCards.forEach(card => {
             projectObserver.observe(card);
         });
 
