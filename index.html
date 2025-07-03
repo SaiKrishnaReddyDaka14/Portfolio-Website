@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sai Krishna Reddy Daka - Portfolio</title>
 <!-- Tailwind CSS CDN -->
-<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.tailwindcss.com">tailwind.config = {
+    darkMode: 'class'
+  };</script>
 <!-- Google Fonts - Inter -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <!-- Font Awesome for icons -->
@@ -123,7 +125,7 @@ border: 1px solid rgba(0, 0, 0, 0.05);
 <body class="antialiased">
 
 <!-- Header -->
-<header class="bg-blue-100 shadow-lg fixed w-full z-50">
+<header class="bg-blue-100 dark:bg-gray-800 shadow-lg fixed w-full z-50">
 <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
 <a href="#home" class="text-2xl font-bold text-gray-700 hover:text-blue-600 transition duration-300">Sai Krishna</a>
 <div class="hidden md:flex space-x-8">
@@ -134,10 +136,6 @@ border: 1px solid rgba(0, 0, 0, 0.05);
 <a href="#projects" class="nav-link text-lg text-gray-700 hover:text-blue-600 transition duration-300">Projects</a>
 <a href="#skills" class="nav-link text-lg text-gray-700 hover:text-blue-600 transition duration-300">Skills</a>
 <a href="#contact" class="nav-link text-lg text-gray-700 hover:text-blue-600 transition duration-300">Contact</a>
-<!-- Dark Mode Toggle Button -->
-<button id="theme-toggle" class="flex items-center gap-2 px-4 py-2 rounded-md border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition-all text-sm">
-  <i id="theme-icon" class="fas fa-moon"></i>
-</button>
 </div>
 <!-- Mobile Menu Button -->
 <button id="mobile-menu-button" class="md:hidden text-gray-700 hover:text-blue-600 focus:outline-none">
@@ -153,6 +151,9 @@ border: 1px solid rgba(0, 0, 0, 0.05);
 <a href="#projects" class="nav-link block px-6 py-2 text-lg text-gray-700 hover:text-blue-600 transition duration-300 border-b border-blue-200">Projects</a>
 <a href="#skills" class="nav-link block px-6 py-2 text-lg text-gray-700 hover:text-blue-600 transition duration-300 border-b border-blue-200">Skills</a>
 <a href="#contact" class="nav-link block px-6 py-2 text-lg text-gray-700 hover:text-blue-600 transition duration-300 border-b border-blue-200">Contact</a>
+<button id="theme-toggle" class="flex items-center gap-2 px-4 py-2 rounded-md border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition-all text-sm">
+  <i id="theme-icon" class="fas fa-moon"></i>
+</button>
 </div>
 </header>
 
