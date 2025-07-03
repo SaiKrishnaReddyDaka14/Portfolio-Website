@@ -117,14 +117,25 @@ border: 1px solid rgba(0, 0, 0, 0.05);
 .skills-list {
 @apply text-gray-700 text-lg space-y-2;
 }
+header.shrink {
+  padding-top: 0.25rem !important;  /* shrink vertically */
+  padding-bottom: 0.25rem !important;
+  background-color: rgba(59, 130, 246, 0.9); /* blue-500 with opacity */
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
 
+nav.shrink {
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
+}
 </style>
 </head>
 <body class="antialiased">
 
 <!-- Header -->
-<header class="bg-blue-100 shadow-lg fixed w-full z-50">
-<nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+<header class="bg-blue-100 shadow-lg fixed w-full z-50 transition-all duration-300">
+<nav class="container mx-auto px-6 py-4 flex justify-between items-center transition-all duration-300">
 <a href="#home" class="text-xl font-bold text-gray-700 hover:text-blue-600 transition duration-300">Sai Krishna</a>
 <div class="hidden md:flex space-x-8">
 <a href="#home" class="nav-link text-lg text-gray-700 hover:text-blue-600 transition duration-300">Home</a>
@@ -599,6 +610,27 @@ initialActiveLink.classList.add('active');
 // Fallback to home if no hash or invalid hash
 document.querySelector('nav a[href="#home"]').classList.add('active');
 }
+});
+
+// 6. Shrink header on scroll
+let lastScrollTop = 0;
+const header = document.querySelector('header');
+const nav = header.querySelector('nav');
+
+window.addEventListener('scroll', () => {
+  const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (currentScroll > 100 && currentScroll > lastScrollTop) {
+    // Scroll down
+    header.classList.add('shrink');
+    nav.classList.add('shrink');
+  } else if (currentScroll < 100) {
+    // Near top
+    header.classList.remove('shrink');
+    nav.classList.remove('shrink');
+  }
+
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Avoid negative scroll
 });
 
 </script>
