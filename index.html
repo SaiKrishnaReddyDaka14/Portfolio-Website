@@ -164,39 +164,52 @@ nav.shrink {
 
 <main>
 <!-- Home Section -->
-<section id="home" class="relative min-h-screen flex items-center justify-center text-center bg-gradient-to-br from-blue-50 to-blue-100 pt-20">
-<div class="max-w-4xl px-6 py-12">
-<h1 class="text-5xl md:text-7xl font-extrabold leading-tight text-gray-800 mb-4">
-Hi, I'm <span class="text-blue-600">Sai Krishna</span>
-</h1>
-<p class="text-3xl md:text-4xl font-semibold text-gray-700 mb-8">
-A <span id="typing-text" class="typing-animation text-blue-500"></span>
-</p>
-<div class="flex flex-col sm:flex-row items-center justify-center gap-6">
-    <!-- Resume Download Button -->
-    <a 
-        href="assets/resume.pdf" 
-        download 
-        class="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-2xl shadow-lg transition duration-300 transform hover:scale-105"
-    >
-        <i class="fas fa-download text-lg"></i>
-        Resume
-    </a>
+<section id="home" class="relative min-h-screen flex items-center bg-gradient-to-br from-blue-50 to-blue-100 pt-20 px-6">
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between py-12 gap-12">
+        <div class="text-left md:w-1/2">
+            <h1 class="text-5xl md:text-7xl font-extrabold leading-tight text-gray-800 mb-4">
+                Hi, I'm <span class="text-blue-600">Sai Krishna</span>
+            </h1>
+            <p class="text-3xl md:text-4xl font-semibold text-gray-700 mb-8">
+                A <span id="typing-text" class="typing-animation text-blue-500"></span>
+            </p>
+            <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6">
+                <a
+                    href="assets/resume.pdf"
+                    download
+                    class="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-2xl shadow-lg transition duration-300 transform hover:scale-105"
+                >
+                    <i class="fas fa-download text-lg"></i>
+                    Resume
+                </a>
 
-    <!-- LinkedIn Button -->
-    <a 
-        href="https://www.linkedin.com/in/sai-krishna-d-256753229" 
-        target="_blank" 
-        class="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-2xl shadow-lg transition duration-300 transform hover:scale-105"
-    >
-        <i class="fab fa-linkedin text-lg"></i>
-        LinkedIn
-    </a>
-</div>
+                <a
+                    href="https://www.linkedin.com/in/sai-krishna-d-256753229"
+                    target="_blank"
+                    class="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-2xl shadow-lg transition duration-300 transform hover:scale-105"
+                >
+                    <i class="fab fa-linkedin text-lg"></i>
+                    LinkedIn
+                </a>
+            </div>
+        </div>
 
-</div>
+        <div class="md:w-1/2 flex justify-center md:justify-end mt-12 md:mt-0">
+            <div class="relative bg-white rounded-xl shadow-2xl p-6 lg:p-8 max-w-sm w-full transition-all duration-300 transform hover:scale-105" style="transform: rotate(5deg);">
+                <div class="absolute -top-2 -right-2 w-4 h-4 bg-red-500 rounded-full"></div>
+                <div class="absolute -top-2 -right-8 w-4 h-4 bg-yellow-500 rounded-full"></div>
+                <div class="absolute -top-2 -right-14 w-4 h-4 bg-green-500 rounded-full"></div>
+                <pre class="text-gray-800 text-sm md:text-base font-mono leading-relaxed">
+<span class="text-blue-600">const</span> <span class="text-indigo-600">developer</span> = <span class="text-green-600">"passionate"</span>;
+<span class="text-blue-600">function</span> <span class="text-purple-600">createAmazingApps</span>() {
+  <span class="text-gray-500">// Building the future</span>
+}
+                </pre>
+            </div>
+        </div>
+    </div>
 </section>
-
+  
 <!-- About Section -->
 <section id="about" class="py-16 md:py-24 bg-white text-gray-800 fade-in-section">
 <div class="container mx-auto px-6 max-w-4xl">
