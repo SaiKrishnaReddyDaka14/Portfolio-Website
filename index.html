@@ -6,12 +6,10 @@
     <title>Sai Krishna Reddy Daka - Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        // Tailwind CSS configuration for dark mode
         tailwind.config = {
-            darkMode: 'class', // Enable dark mode based on the 'dark' class
+            darkMode: 'class',
             theme: {
                 extend: {
-                    // You can extend your theme here if needed
                 }
             }
         }
@@ -19,13 +17,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Custom CSS for animations and typography */
         body {
             font-family: 'Inter', sans-serif;
-            /* Tailwind classes applied directly in HTML for light/dark mode */
         }
-
-        /* Typing Animation */
         .typing-animation::after {
             content: '|';
             animation: blink-caret 0.75s step-end infinite;
@@ -36,17 +30,13 @@
                 border-color: transparent;
             }
             50% {
-                /* Changed caret color for light mode, added dark mode support */
-                border-color: #2563EB; /* blue-600 */
+                border-color: #2563EB; 
             }
-            /* Dark mode caret color */
             html.dark & {
-                border-color: #60A5FA; /* blue-400 */
+                border-color: #60A5FA;
             }
         }
 
-
-        /* Fade-in Animation on Scroll */
         .fade-in-section {
             opacity: 0;
             transform: translateY(20px);
@@ -57,21 +47,16 @@
             transform: translateY(0);
         }
 
-        /* Active Navigation Link */
         .nav-link.active {
-            /* Changed from purple to blue-600 */
             @apply text-blue-600 font-bold dark:text-blue-400;
         }
 
-        /* Smooth scroll behavior is handled by scroll-smooth class on html tag */
-
-        /* Specific card styles for dynamic appearance */
         .dynamic-card {
             @apply bg-white rounded-xl shadow-lg p-8 transform transition-all duration-300 ease-in-out dark:bg-gray-700 dark:shadow-none dark:border dark:border-gray-600;
-            border: 1px solid rgba(0, 0, 0, 0.05); /* Subtle border for definition */
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
         .dynamic-card:hover {
-            @apply shadow-2xl scale-102 dark:shadow-none; /* More pronounced hover effect */
+            @apply shadow-2xl scale-102 dark:shadow-none;
         }
         .dynamic-card-header {
             @apply flex items-center mb-4;
@@ -173,7 +158,7 @@
                             A <span id="typing-text" class="typing-animation text-blue-500 dark:text-blue-300"></span>
                         </p>
                         <div class="flex flex-col sm:flex-row items-center md:items-start gap-4">
-                            <a href="assets/resume.pdf" download class="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-2xl shadow-lg transition duration-300 transform hover:scale-105 dark:bg-blue-700 dark:hover:bg-blue-800">
+                            <a href="assets/SaiKrishnaReddy_Daka_Resume.pdf" download class="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-2xl shadow-lg transition duration-300 transform hover:scale-105 dark:bg-blue-700 dark:hover:bg-blue-800">
                                 <i class="fas fa-download text-lg"></i> Resume
                             </a>
                             <a href="https://www.linkedin.com/in/sai-krishna-d-256753229" target="_blank" class="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-2xl shadow-lg transition duration-300 transform hover:scale-105 dark:bg-blue-700 dark:hover:bg-blue-800">
@@ -184,10 +169,10 @@
                     <div class="md:w-1/2 flex justify-center md:justify-end mt-12 md:mt-0">
                         <div class="relative bg-white rounded-xl shadow-2xl p-6 lg:p-8 max-w-[400px] w-full min-h-[200px] transition-all duration-300 transform hover:scale-105 dark:bg-gray-700 dark:shadow-none dark:border dark:border-gray-600">
                             <pre class="text-gray-800 text-sm md:text-base font-mono leading-relaxed dark:text-gray-100">
-<span class="text-blue-600 dark:text-blue-400">const</span> <span class="text-indigo-600 dark:text-purple-400">developer</span> = <span class="text-green-600 dark:text-teal-400">"passionate"</span>;
-<span class="text-blue-600 dark:text-blue-400">function</span> <span class="text-purple-600 dark:text-pink-400">buildFutureReadyApps()</span>() {
-  <span class="text-gray-500 dark:text-gray-400">// Building the future</span>
-}
+                                <span class="text-blue-600 dark:text-blue-400">const</span> <span class="text-indigo-600 dark:text-purple-400">developer</span> = <span class="text-green-600 dark:text-teal-400">"passionate"</span>;
+                                <span class="text-blue-600 dark:text-blue-400">function</span> <span class="text-purple-600 dark:text-pink-400">buildFutureReadyApps()</span>() {
+                                <span class="text-gray-500 dark:text-gray-400">// Building the future</span>
+                                }
                             </pre>
                         </div>
                     </div>
