@@ -353,21 +353,24 @@
           <div class="container mx-auto px-6 max-w-5xl">
             <h2 class="text-4xl font-bold text-center text-gray-800 mb-12 dark:text-gray-100">My Projects</h2>
              <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-             <div class="bg-white rounded-lg shadow-xl overflow-hidden fade-in-section hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 dark:bg-gray-700 dark:shadow-none dark:border dark:border-gray-600">
-              <img src="https://placehold.co/600x400/3B82F6/FFFFFF?text=Project+1" alt="Project 1 Image" class="w-full h-56 object-cover">
-                <div class="p-6">
-                  <h3 class="text-2xl font-semibold text-gray-800 mb-3 dark:text-gray-100">Interactive Dashboard</h3>
-                  <p class="text-gray-700 mb-4 dark:text-gray-200">A responsive dashboard built with HTML, Tailwind CSS, and JavaScript, featuring dynamic charts and data visualization.</p>
-<div class="flex space-x-4">
-<a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 transform hover:scale-105 dark:bg-blue-700 dark:hover:bg-blue-800">
-Live Demo
-</a>
-<a href="#" class="inline-block bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-md transition duration-300 transform hover:scale-105 dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-gray-100">
-GitHub
-</a>
+              <div class="bg-white rounded-lg shadow-xl overflow-hidden fade-in-section hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 dark:bg-gray-700 dark:shadow-none dark:border dark:border-gray-600">
+    <img src="/assets/images/face-recognition-architecture.png" alt="Architecture diagram of an Edge-Based AI Face Recognition System" class="w-full h-56 object-cover">
+    <div class="p-6">
+        <h3 class="text-2xl font-semibold text-gray-800 mb-3 dark:text-gray-100">Edge-Based AI Face Recognition System</h3>
+        <p class="text-gray-700 mb-4 dark:text-gray-200">
+            A real-time, cost-optimized face recognition system with intelligent edge processing and cloud inference.
+        </p>
+        <div class="flex space-x-4">
+            <button
+                class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 transform hover:scale-105 dark:bg-blue-700 dark:hover:bg-blue-800"
+                data-modal-target="aiRecognitionModal"
+            >
+                View Details
+            </button>
+            </div>
+    </div>
 </div>
-</div>
-</div>
+                 
 <div class="bg-white rounded-lg shadow-xl overflow-hidden fade-in-section hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 dark:bg-gray-700 dark:shadow-none dark:border dark:border-gray-600">
 <img src="https://placehold.co/600x400/3B82F6/FFFFFF?text=Project+2" alt="Project 2 Image" class="w-full h-56 object-cover">
 <div class="p-6">
@@ -539,7 +542,55 @@ GitHub
         </div>
     </footer>
 
+    <div id="aiRecognitionModal" class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50 hidden transition-opacity duration-300 opacity-0">
+    <div class="bg-white rounded-lg shadow-xl p-6 w-full max-w-3xl max-h-[90vh] overflow-y-auto transform scale-95 transition-transform duration-300 dark:bg-gray-800 dark:text-gray-100">
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-100">Edge-Based AI Face Recognition System</h2>
+            <button class="text-gray-500 hover:text-gray-700 text-2xl" data-modal-close>
+                &times;
+            </button>
+        </div>
+
+        <img src="/assets/images/face-recognition-architecture.png" alt="Architecture diagram of Edge-Based AI Face Recognition System" class="w-full h-auto rounded-md mb-6">
+
+        <p class="text-gray-700 mb-4 dark:text-gray-200">
+            This project focuses on a real-time, highly accurate, and cost-effective face recognition solution by distributing AI workloads between edge devices and the AWS cloud.
+        </p>
+
+        <h4 class="text-xl font-semibold text-gray-800 mb-2 dark:text-gray-100">Key Achievements & Technical Details:</h4>
+        <ul class="text-gray-700 list-disc list-inside mb-6 dark:text-gray-200">
+            <li>
+                **Real-time Recognition:** Designed and deployed a real-time face recognition system using **MTCNN** for efficient face detection on **AWS IoT Greengrass** at the edge.
+            </li>
+            <li>
+                **High Accuracy:** Leveraged a **FaceNet model** on **AWS Lambda** for robust facial embedding generation and comparison, achieving **98.7% accuracy**.
+            </li>
+            <li>
+                **Containerized Deployment (PaaS):** Models were **containerized with Docker** and deployed seamlessly via **Amazon ECR**, ensuring version control and scalable management.
+            </li>
+            <li>
+                **Secure & Efficient Messaging:** Established a secure, event-driven messaging pipeline using **MQTT and TLS** for reliable communication between edge and cloud.
+            </li>
+            <li>
+                **Cost & Workload Optimization:** Implemented intelligent **edge-side filtering** to discard “No-Face” frames, resulting in a **40% reduction in cloud workload** and cutting **Lambda invocation costs by 35%**.
+            </li>
+        </ul>
+
+        <h4 class="text-xl font-semibold text-gray-800 mb-2 dark:text-gray-100">Technologies Used:</h4>
+        <p class="text-gray-700 mb-6 dark:text-gray-200">AWS IoT Greengrass, AWS Lambda, Amazon ECR, Docker, MQTT, TLS, MTCNN, FaceNet, Python.</p>
+
+        <div class="flex space-x-4 justify-end">
+            <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 transform hover:scale-105 dark:bg-blue-700 dark:hover:bg-blue-800" target="_blank" rel="noopener noreferrer">
+                Live Demo
+            </a>
+            <a href="#" class="inline-block bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-md transition duration-300 transform hover:scale-105 dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-gray-100" target="_blank" rel="noopener noreferrer">
+                GitHub
+            </a>
+        </div>
+    </div>
+</div>
     <script>
+    document.addEventListener('DOMContentLoaded', () => {
         // Dark Mode Toggle
         const themeToggleBtn = document.getElementById('theme-toggle');
         const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
@@ -611,14 +662,14 @@ GitHub
             setTimeout(typeEffect, typingSpeed);
         }
 
-        // Start the typing effect when the DOM is fully loaded
-        document.addEventListener('DOMContentLoaded', typeEffect);
+        // Call it directly since we are already inside DOMContentLoaded
+        typeEffect();
 
         // 2. Mobile Menu Toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        const navLinks = document.querySelectorAll('.nav-link'); // Get all nav links including mobile
-
+        // No need for const navLinks = document.querySelectorAll('.nav-link'); here as it's not used in this block
+        
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
@@ -734,6 +785,80 @@ GitHub
             lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Avoid negative scroll
         });
 
-    </script>
+
+        // -------- MODAL FUNCTIONALITY - NEW CODE STARTS HERE --------
+
+        const openModalButtons = document.querySelectorAll('[data-modal-target]');
+        const closeModalButtons = document.querySelectorAll('[data-modal-close]');
+        const allModals = document.querySelectorAll('.fixed.inset-0.bg-gray-900'); // Select all modal overlays
+
+        openModalButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const modalId = button.dataset.modalTarget;
+                const modal = document.getElementById(modalId);
+                if (modal) {
+                    modal.classList.remove('hidden'); // Make it visible
+                    setTimeout(() => { // Trigger transition after display block
+                        modal.classList.add('opacity-100');
+                        // Ensure the child div for content is also targeted for scale
+                        modal.querySelector('div:first-child').classList.remove('scale-95');
+                        modal.querySelector('div:first-child').classList.add('scale-100');
+                    }, 10); // Small delay for transition to kick in
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling on body
+                }
+            });
+        });
+
+        closeModalButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const modal = button.closest('.fixed.inset-0.bg-gray-900'); // Find the parent modal
+                if (modal) {
+                    modal.classList.remove('opacity-100');
+                    // Ensure the child div for content is also targeted for scale
+                    modal.querySelector('div:first-child').classList.remove('scale-100');
+                    modal.querySelector('div:first-child').classList.add('scale-95');
+                    setTimeout(() => { // Hide after transition
+                        modal.classList.add('hidden');
+                        document.body.style.overflow = ''; // Restore scrolling
+                    }, 300); // Match CSS transition duration
+                }
+            });
+        });
+
+        // Optional: Close modal when clicking outside the content
+        allModals.forEach(modal => {
+            modal.addEventListener('click', (event) => {
+                if (event.target === modal) { // Only if clicked directly on the overlay
+                    modal.classList.remove('opacity-100');
+                    modal.querySelector('div:first-child').classList.remove('scale-100');
+                    modal.querySelector('div:first-child').classList.add('scale-95');
+                    setTimeout(() => {
+                        modal.classList.add('hidden');
+                        document.body.style.overflow = '';
+                    }, 300);
+                }
+            });
+        });
+
+        // Optional: Close modal with ESC key
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                const openModal = document.querySelector('.fixed.inset-0.bg-gray-900:not(.hidden)');
+                if (openModal) {
+                    openModal.classList.remove('opacity-100');
+                    openModal.querySelector('div:first-child').classList.remove('scale-100');
+                    openModal.querySelector('div:first-child').classList.add('scale-95');
+                    setTimeout(() => {
+                        openModal.classList.add('hidden');
+                        document.body.style.overflow = '';
+                    }, 300);
+                }
+            }
+        });
+
+        // -------- MODAL FUNCTIONALITY - NEW CODE ENDS HERE --------
+
+    }); // End of DOMContentLoaded
+</script>
 </body>
 </html>
