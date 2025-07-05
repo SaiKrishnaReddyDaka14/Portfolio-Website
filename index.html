@@ -740,20 +740,22 @@
             lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Avoid negative scroll
         });
 
-document.querySelectorAll('.flip-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const card = btn.closest('.flip-wrapper');
-    card.classList.add('flipped');
+  document.querySelectorAll('.flip-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation(); // prevent bubbling
+      const wrapper = btn.closest('.flip-wrapper');
+      wrapper.classList.add('flipped');
+    });
   });
-});
 
-document.querySelectorAll('.flip-back-btn').forEach(btn => {
-  btn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    const card = btn.closest('.flip-wrapper');
-    card.classList.remove('flipped');
+  // Flip back to front
+  document.querySelectorAll('.flip-back-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation(); // prevent bubbling
+      const wrapper = btn.closest('.flip-wrapper');
+      wrapper.classList.remove('flipped');
+    });
   });
-});
     </script>
 </body>
 </html>
