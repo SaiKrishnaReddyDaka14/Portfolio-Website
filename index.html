@@ -127,49 +127,34 @@
             padding-top: 0.25rem !important;
             padding-bottom: 0.25rem !important;
         }
-        /* Custom CSS for 3D Flip Effect */
-    .flip-card-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        transition: transform 0.8s; /* Controls the flip speed */
-        transform-style: preserve-3d; /* Key for 3D effect */
-    }
-
-    .flip-card.flipped .flip-card-inner {
-        transform: rotateY(180deg); /* The actual flip transformation */
-    }
-
-    .flip-card-front,
-    .flip-card-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        -webkit-backface-visibility: hidden; /* Hide the back of the element when facing away */
-        backface-visibility: hidden; /* Hide the back of the element when facing away */
-        border-radius: 0.5rem; /* Matches Tailwind's rounded-lg */
-    }
-
-    .flip-card-back {
-        transform: rotateY(180deg); /* Rotates the back face to be initially hidden */
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between; /* Pushes content and links to top/bottom */
-        padding: 1.5rem; /* Matches Tailwind's p-6 */
-        overflow-y: auto; /* Enable scrolling for long content */
-    }
-
-    /* Style for features list in the back of the card */
-    .flip-card-back ul {
-        list-style: disc;
-        padding-left: 1.5rem; /* Indent for bullet points */
-        margin-top: 1rem;
-        text-align: left; /* Align list items to left */
-    }
-    .flip-card-back ul li {
-        margin-bottom: 0.5rem; /* Space between list items */
-    }
+.perspective-1000 {
+  perspective: 1000px;
+}
+.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-inner {
+  transform-style: preserve-3d;
+  transition: transform 0.7s;
+  position: relative;
+}
+.flip-card-front,
+.flip-card-back {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.flip-card-front {
+  z-index: 2;
+}
+.flip-card-back {
+  transform: rotateY(180deg);
+  z-index: 1;
+}
     </style>
 </head>
 <body class="antialiased bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100">
@@ -393,85 +378,90 @@
 </section>
 
         <section id="projects" class="py-16 md:py-24 bg-blue-50 text-gray-800 dark:bg-gray-800 dark:text-gray-100">
-    <div class="container mx-auto px-6 max-w-5xl">
-        <h2 class="text-4xl font-bold text-center text-gray-800 mb-12 dark:text-gray-100">My Projects</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+  <div class="container mx-auto px-6 max-w-5xl">
+    <h2 class="text-4xl font-bold text-center text-gray-800 mb-12 dark:text-gray-100">My Projects</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
 
-            <div class="relative w-full h-[500px] perspective-1000"> <div class="flip-card-inner h-full w-full bg-white rounded-lg shadow-xl overflow-hidden fade-in-section hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 dark:bg-gray-700 dark:shadow-none dark:border dark:border-gray-600">
+      <!-- Project Card 1 -->
+      <div class="relative w-full h-[500px] perspective-1000">
+        <div class="flip-card-inner bg-white dark:bg-gray-700 rounded-lg shadow-xl dark:shadow-none dark:border dark:border-gray-600 overflow-hidden fade-in-section transition duration-300 transform hover:-translate-y-2">
 
-                    <div class="flip-card-front bg-white dark:bg-gray-700 dark:border dark:border-gray-600 flex flex-col justify-between">
-                        <img src="https://placehold.co/600x400/3B82F6/FFFFFF?text=Project+1" alt="Project 1 Image" class="w-full h-56 object-cover rounded-t-lg">
-                        <div class="p-6 flex-grow flex flex-col">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3 dark:text-gray-100">Interactive Dashboard</h3>
-                            <p class="text-gray-700 mb-4 dark:text-gray-200 flex-grow">A responsive dashboard built with HTML, Tailwind CSS, and JavaScript, featuring dynamic charts and data visualization.</p>
-                            <div class="flex space-x-4 mt-auto">
-                                <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 transform hover:scale-105 dark:bg-blue-700 dark:hover:bg-blue-800"> Live Demo </a>
-                                <a href="#" class="inline-block bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-md transition duration-300 transform hover:scale-105 dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-gray-100"> GitHub </a>
-                            </div>
-                        </div>
-                    </div>
+          <!-- Front Side -->
+          <div class="flip-card-front bg-white dark:bg-gray-700 p-6 rounded-lg flex flex-col justify-between">
+            <img src="https://placehold.co/600x400/3B82F6/FFFFFF?text=Project+1" alt="Project 1" class="w-full h-56 object-cover rounded-t-lg">
+            <div class="mt-4 flex-grow">
+              <h3 class="text-2xl font-semibold dark:text-white mb-2">Interactive Dashboard</h3>
+              <p class="text-gray-700 dark:text-gray-200 mb-4">A responsive dashboard featuring real-time charts and data visualization.</p>
+            </div>
+            <div class="flex space-x-4 mt-auto">
+              <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md font-bold">Live Demo</a>
+              <a href="#" class="bg-gray-200 hover:bg-gray-300 text-gray-800 dark:bg-gray-600 dark:text-white py-2 px-4 rounded-md font-bold">GitHub</a>
+            </div>
+          </div>
 
-                    <div class="flip-card-back bg-white text-gray-800 dark:bg-gray-700 dark:text-gray-100 dark:border dark:border-gray-600">
-                        <button class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-100 text-2xl font-bold flip-back-btn">
-                            &times;
-                        </button>
-                        <h3 class="text-2xl font-semibold mb-3">Interactive Dashboard</h3>
-                        <p class="text-gray-700 mb-4 dark:text-gray-200">
-                            This project demonstrates advanced front-end development with a focus on data visualization and user experience.
-                        </p>
-                        <h4 class="text-xl font-semibold mb-2">Key Features:</h4>
-                        <ul class="text-gray-700 dark:text-gray-200 flex-grow">
-                            <li>Real-time data fetching from a mock API.</li>
-                            <li>Dynamic chart rendering using Chart.js.</li>
-                            <li>Responsive design ensuring usability on all devices.</li>
-                            <li>Intuitive user interface for easy data filtering.</li>
-                            <li>Integrated search functionality.</li>
-                        </ul>
-                        <div class="flex space-x-4 mt-auto">
-                            <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 transform hover:scale-105 dark:bg-blue-700 dark:hover:bg-blue-800" target="_blank"> Live Demo </a>
-                            <a href="#" class="inline-block bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-md transition duration-300 transform hover:scale-105 dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-gray-100" target="_blank"> GitHub </a>
-                        </div>
-                    </div>
-                </div>
+          <!-- Back Side -->
+          <div class="flip-card-back bg-white dark:bg-gray-700 p-6 rounded-lg">
+            <button class="absolute top-4 right-4 text-2xl text-gray-500 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white font-bold flip-back-btn">
+              &times;
+            </button>
+            <h3 class="text-2xl font-semibold mb-2">Interactive Dashboard</h3>
+            <p class="text-gray-700 dark:text-gray-200 mb-4">Built with HTML, Tailwind CSS, and Chart.js for dynamic data representation.</p>
+            <h4 class="text-xl font-semibold mb-2">Key Features:</h4>
+            <ul class="list-disc pl-5 text-gray-700 dark:text-gray-200 space-y-1">
+              <li>Real-time chart updates</li>
+              <li>Responsive design</li>
+              <li>Interactive filters</li>
+              <li>REST API integration</li>
+            </ul>
+            <div class="flex space-x-4 mt-4">
+              <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md font-bold">Live Demo</a>
+              <a href="#" class="bg-gray-200 hover:bg-gray-300 text-gray-800 dark:bg-gray-600 dark:text-white py-2 px-4 rounded-md font-bold">GitHub</a>
             </div>
-            <div class="relative w-full h-[500px] perspective-1000">
-                <div class="flip-card-inner h-full w-full bg-white rounded-lg shadow-xl overflow-hidden fade-in-section hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 dark:bg-gray-700 dark:shadow-none dark:border dark:border-gray-600">
-                    <div class="flip-card-front bg-white dark:bg-gray-700 dark:border dark:border-gray-600 flex flex-col justify-between">
-                        <img src="https://placehold.co/600x400/3B82F6/FFFFFF?text=Project+2" alt="Project 2 Image" class="w-full h-56 object-cover rounded-t-lg">
-                        <div class="p-6 flex-grow flex flex-col">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3 dark:text-gray-100">E-commerce Product Page</h3>
-                            <p class="text-gray-700 mb-4 dark:text-gray-200 flex-grow">A sleek and modern product page design, showcasing responsive layouts and interactive elements for a seamless shopping experience.</p>
-                            <div class="flex space-x-4 mt-auto">
-                                <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 transform hover:scale-105 dark:bg-blue-700 dark:hover:bg-blue-800"> Live Demo </a>
-                                <a href="#" class="inline-block bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-md transition duration-300 transform hover:scale-105 dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-gray-100"> GitHub </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flip-card-back bg-white text-gray-800 dark:bg-gray-700 dark:text-gray-100 dark:border dark:border-gray-600">
-                        <button class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-100 text-2xl font-bold flip-back-btn">
-                            &times;
-                        </button>
-                        <h3 class="text-2xl font-semibold mb-3">E-commerce Product Page</h3>
-                        <p class="text-gray-700 mb-4 dark:text-gray-200">
-                            Designed to offer a visually appealing and highly functional product viewing experience.
-                        </p>
-                        <h4 class="text-xl font-semibold mb-2">Key Features:</h4>
-                        <ul class="text-gray-700 dark:text-gray-200 flex-grow">
-                            <li>Interactive product image gallery.</li>
-                            <li>Dynamic pricing and availability updates.</li>
-                            <li>Add to cart functionality.</li>
-                            <li>Customer review section.</li>
-                            <li>Cross-browser compatibility.</li>
-                        </ul>
-                        <div class="flex space-x-4 mt-auto">
-                            <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 transform hover:scale-105 dark:bg-blue-700 dark:hover:bg-blue-800" target="_blank"> Live Demo </a>
-                            <a href="#" class="inline-block bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-md transition duration-300 transform hover:scale-105 dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-gray-100" target="_blank"> GitHub </a>
-                        </div>
-                    </div>
-                </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card 2 -->
+      <div class="relative w-full h-[500px] perspective-1000">
+        <div class="flip-card-inner bg-white dark:bg-gray-700 rounded-lg shadow-xl dark:shadow-none dark:border dark:border-gray-600 overflow-hidden fade-in-section transition duration-300 transform hover:-translate-y-2">
+
+          <!-- Front Side -->
+          <div class="flip-card-front bg-white dark:bg-gray-700 p-6 rounded-lg flex flex-col justify-between">
+            <img src="https://placehold.co/600x400/3B82F6/FFFFFF?text=Project+2" alt="Project 2" class="w-full h-56 object-cover rounded-t-lg">
+            <div class="mt-4 flex-grow">
+              <h3 class="text-2xl font-semibold dark:text-white mb-2">E-commerce Page</h3>
+              <p class="text-gray-700 dark:text-gray-200 mb-4">Modern product page with interactive cart and review system.</p>
             </div>
+            <div class="flex space-x-4 mt-auto">
+              <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md font-bold">Live Demo</a>
+              <a href="#" class="bg-gray-200 hover:bg-gray-300 text-gray-800 dark:bg-gray-600 dark:text-white py-2 px-4 rounded-md font-bold">GitHub</a>
             </div>
+          </div>
+
+          <!-- Back Side -->
+          <div class="flip-card-back bg-white dark:bg-gray-700 p-6 rounded-lg">
+            <button class="absolute top-4 right-4 text-2xl text-gray-500 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white font-bold flip-back-btn">
+              &times;
+            </button>
+            <h3 class="text-2xl font-semibold mb-2">E-commerce Page</h3>
+            <p class="text-gray-700 dark:text-gray-200 mb-4">Built using modern HTML/CSS practices and JS for product interaction.</p>
+            <h4 class="text-xl font-semibold mb-2">Key Features:</h4>
+            <ul class="list-disc pl-5 text-gray-700 dark:text-gray-200 space-y-1">
+              <li>Dynamic pricing updates</li>
+              <li>Responsive gallery layout</li>
+              <li>Cart integration</li>
+              <li>Review section</li>
+            </ul>
+            <div class="flex space-x-4 mt-4">
+              <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md font-bold">Live Demo</a>
+              <a href="#" class="bg-gray-200 hover:bg-gray-300 text-gray-800 dark:bg-gray-600 dark:text-white py-2 px-4 rounded-md font-bold">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
+  </div>
 </section>
 
         <section id="skills" class="py-16 md:py-24 bg-white text-gray-800 fade-in-section dark:bg-gray-900 dark:text-gray-100">
@@ -790,6 +780,22 @@
             }
             lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Avoid negative scroll
         });
+
+        document.querySelectorAll('.flip-card-inner').forEach(card => {
+  const front = card.querySelector('.flip-card-front');
+  const backBtn = card.querySelector('.flip-back-btn');
+
+  // Flip forward when front is clicked
+  front.addEventListener('click', () => {
+    card.parentElement.classList.add('flipped');
+  });
+
+  // Flip back when "×" is clicked
+  backBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    card.parentElement.classList.remove('flipped');
+  });
+});
     </script>
 </body>
 </html>
