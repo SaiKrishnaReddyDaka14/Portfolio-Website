@@ -127,31 +127,6 @@
             padding-top: 0.25rem !important;
             padding-bottom: 0.25rem !important;
         }
-.perspective-1000 {
-  perspective: 1000px;
-}
-.flip-wrapper.flipped .flip-card-inner {
-  transform: rotateY(180deg);
-}
-.flip-card-inner {
-  transition: transform 0.8s ease;
-  transform-style: preserve-3d;
-  position: relative;
-  height: 100%;
-}
-.flip-card-front,
-.flip-card-back {
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-.flip-card-back {
-  transform: rotateY(180deg);
-}
     </style>
 </head>
 <body class="antialiased bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100">
@@ -375,52 +350,71 @@
 </section>
 
         <section id="projects" class="py-16 md:py-24 bg-blue-50 text-gray-800 dark:bg-gray-800 dark:text-gray-100">
-  <div class="container mx-auto px-6 max-w-5xl">
-    <h2 class="text-4xl font-bold text-center text-gray-800 mb-12 dark:text-gray-100">My Projects</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-      
-      <!-- Project Card -->
-      <div class="relative h-[500px] perspective-1000 flip-wrapper">
-        <div class="flip-card-inner bg-white dark:bg-gray-700 rounded-lg shadow-xl dark:border dark:border-gray-600 overflow-hidden">
-
-          <!-- Front -->
-          <div class="flip-card-front p-6 flex flex-col justify-between rounded-lg bg-white dark:bg-gray-700">
-            <img src="https://placehold.co/600x400/3B82F6/FFFFFF?text=Project+1" class="w-full h-56 object-cover rounded-t-lg" />
-            <div class="mt-4 flex-grow">
-              <h3 class="text-2xl font-semibold mb-2 dark:text-white">Interactive Dashboard</h3>
-              <p class="text-gray-700 dark:text-gray-200 mb-4">A responsive dashboard with real-time data charts built using Chart.js and Tailwind.</p>
-            </div>
-            <div class="flex space-x-4 mt-auto">
-              <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md font-bold">Live Demo</a>
-              <a href="#" class="bg-gray-200 hover:bg-gray-300 text-gray-800 dark:bg-gray-600 dark:text-white py-2 px-4 rounded-md font-bold">GitHub</a>
-              <button class="ml-auto text-sm text-blue-600 hover:underline flip-btn">More Info</button>
-            </div>
-          </div>
-
-          <!-- Back -->
-          <div class="flip-card-back p-6 rounded-lg bg-white dark:bg-gray-700">
-            <button class="absolute top-4 right-4 text-2xl text-gray-500 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white flip-back-btn">&times;</button>
-            <h3 class="text-2xl font-semibold mb-2">Interactive Dashboard</h3>
-            <p class="text-gray-700 dark:text-gray-200 mb-4">Key features include:</p>
-            <ul class="list-disc pl-5 text-gray-700 dark:text-gray-200 space-y-1">
-              <li>Real-time chart updates</li>
-              <li>Responsive layout</li>
-              <li>Interactive filters</li>
-              <li>REST API integration</li>
-            </ul>
-            <div class="flex space-x-4 mt-4">
-              <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md font-bold">Live Demo</a>
-              <a href="#" class="bg-gray-200 hover:bg-gray-300 text-gray-800 dark:bg-gray-600 dark:text-white py-2 px-4 rounded-md font-bold">GitHub</a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Duplicate the card above for more projects -->
-
-    </div>
-  </div>
+          <div class="container mx-auto px-6 max-w-5xl">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-12 dark:text-gray-100">My Projects</h2>
+             <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+             <div class="bg-white rounded-lg shadow-xl overflow-hidden fade-in-section hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 dark:bg-gray-700 dark:shadow-none dark:border dark:border-gray-600">
+              <img src="https://placehold.co/600x400/3B82F6/FFFFFF?text=Project+1" alt="Project 1 Image" class="w-full h-56 object-cover">
+                <div class="p-6">
+                  <h3 class="text-2xl font-semibold text-gray-800 mb-3 dark:text-gray-100">Interactive Dashboard</h3>
+                  <p class="text-gray-700 mb-4 dark:text-gray-200">A responsive dashboard built with HTML, Tailwind CSS, and JavaScript, featuring dynamic charts and data visualization.</p>
+<div class="flex space-x-4">
+<a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 transform hover:scale-105 dark:bg-blue-700 dark:hover:bg-blue-800">
+Live Demo
+</a>
+<a href="#" class="inline-block bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-md transition duration-300 transform hover:scale-105 dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-gray-100">
+GitHub
+</a>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-xl overflow-hidden fade-in-section hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 dark:bg-gray-700 dark:shadow-none dark:border dark:border-gray-600">
+<img src="https://placehold.co/600x400/3B82F6/FFFFFF?text=Project+2" alt="Project 2 Image" class="w-full h-56 object-cover">
+<div class="p-6">
+<h3 class="text-2xl font-semibold text-gray-800 mb-3 dark:text-gray-100">E-commerce Product Page</h3>
+<p class="text-gray-700 mb-4 dark:text-gray-200">A sleek and modern product page design, showcasing responsive layouts and interactive elements for a seamless shopping experience.</p>
+<div class="flex space-x-4">
+<a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 transform hover:scale-105 dark:bg-blue-700 dark:hover:bg-blue-800">
+Live Demo
+</a>
+<a href="#" class="inline-block bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-md transition duration-300 transform hover:scale-105 dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-gray-100">
+GitHub
+</a>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-xl overflow-hidden fade-in-section hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 dark:bg-gray-700 dark:shadow-none dark:border dark:border-gray-600">
+<img src="https://placehold.co/600x400/3B82F6/FFFFFF?text=Project+3" alt="Project 3 Image" class="w-full h-56 object-cover">
+<div class="p-6">
+<h3 class="text-2xl font-semibold text-gray-800 mb-3 dark:text-gray-100">Recipe Finder App</h3>
+<p class="text-gray-700 mb-4 dark:text-gray-200">A simple web application that allows users to search for recipes using an external API, demonstrating asynchronous JavaScript.</p>
+<div class="flex space-x-4">
+<a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 transform hover:scale-105 dark:bg-blue-700 dark:hover:bg-blue-800">
+Live Demo
+</a>
+<a href="#" class="inline-block bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-md transition duration-300 transform hover:scale-105 dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-gray-100">
+GitHub
+</a>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-xl overflow-hidden fade-in-section hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 dark:bg-gray-700 dark:shadow-none dark:border dark:border-gray-600">
+<img src="https://placehold.co/600x400/3B82F6/FFFFFF?text=Project+4" alt="Project 4 Image" class="w-full h-56 object-cover">
+<div class="p-6">
+<h3 class="text-2xl font-semibold text-gray-800 mb-3 dark:text-gray-100">Personal Blog Template</h3>
+<p class="text-gray-700 mb-4 dark:text-gray-200">A clean and minimalist blog template designed for content creators, focusing on readability and a smooth user experience.</p>
+<div class="flex space-x-4">
+<a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 transform hover:scale-105 dark:bg-blue-700 dark:hover:bg-blue-800">
+Live Demo
+</a>
+<a href="#" class="inline-block bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-md transition duration-300 transform hover:scale-105 dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-gray-100">
+GitHub
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 
         <section id="skills" class="py-16 md:py-24 bg-white text-gray-800 fade-in-section dark:bg-gray-900 dark:text-gray-100">
@@ -740,22 +734,6 @@
             lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Avoid negative scroll
         });
 
-  document.querySelectorAll('.flip-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation(); // prevent bubbling
-      const wrapper = btn.closest('.flip-wrapper');
-      wrapper.classList.add('flipped');
-    });
-  });
-
-  // Flip back to front
-  document.querySelectorAll('.flip-back-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation(); // prevent bubbling
-      const wrapper = btn.closest('.flip-wrapper');
-      wrapper.classList.remove('flipped');
-    });
-  });
     </script>
 </body>
 </html>
