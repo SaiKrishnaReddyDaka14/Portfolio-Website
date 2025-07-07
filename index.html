@@ -444,11 +444,12 @@
                       <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Python</span>
                       <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">AWS S3</span>
                       <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">AWS DynamoDB</span>
+                      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">pdfplumber</span>
+                      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">PyMuPDF</span>
                       <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">FAISS</span>
                       <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">LLaMA-3.2-90B-Vision-Instruct</span>
                       <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">SentenceTransformers</span>
-                      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">pdfplumber</span>
-                      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">PyMuPDF</span>
+                      
                 </div>
               <div class="flex space-x-4">
               <button
@@ -742,34 +743,36 @@
   <div class="bg-white rounded-lg shadow-xl p-6 w-full max-w-3xl max-h-[90vh] overflow-y-auto transform scale-95 transition-transform duration-300 dark:bg-gray-800 dark:text-gray-100">
     
     <div class="flex justify-between items-center mb-4">
-      <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-100">Edge-Cloud AI-Powered Face Recognition System</h2>
+      <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-100">Multi-Modal Retrieval-Augmented Generation (RAG) System with LLM for Advanced Analysis</h2>
       <button class="text-gray-500 hover:text-gray-700 text-2xl" data-modal-close>&times;</button>
     </div>
 
     <p class="text-gray-700 mb-4 dark:text-gray-200">
-      A real-time AI-powered face recognition system with intelligent edge processing, cloud-based inference, and event-driven communication.
+      An advanced retrieval-augmented generation pipeline that extracts and semantically indexes multi-modal content from research PDFs to answer the user queries using LLaMA-3.2-90B-Vision-Instruct model.
     </p>
 
     <h4 class="text-xl font-semibold text-gray-800 mb-2 dark:text-gray-100">Key Highlights & Architecture:</h4>
     <ul class="text-gray-700 list-disc list-outside pl-6 mb-6 dark:text-gray-200">
-      <li>Engineered a distributed edge-cloud architecture for real-time face recognition by deploying MTCNN-based face detection on an AWS IoT Greengrass Core (EC2) and FaceNet-based recognition on AWS Lambda, achieving 98.7% classification accuracy on live video frames.</li>
-      <li>Containerized all ML components using Docker and published to Amazon ECR, enabling lightweight and scalable deployment across edge (Greengrass) and cloud (Lambda) environments under a PaaS model optimized for event-driven execution.</li>
-      <li>Established a secure, low-latency messaging pipeline using MQTT 3.1.1 and TLS for edge-to-cloud communication, with PubSub and topic mapping to route base64-encoded frames from IoT clients to the Greengrass Core for pre-processing.</li>
-      <li>Reduced cloud workload by 40% by intelligently filtering “No-Face” inputs at the edge and sending only detected faces to the cloud for recognition, lowering Lambda invocation costs by 35% and ensuring faster response times for real-time use cases.</li>
+      <ul class="text-gray-700 list-disc list-outside pl-6 mb-6 dark:text-gray-200">
+          <li>Built a multi-modal RAG pipeline for research PDF processing, allowing users to upload documents via a web UI, which were stored in Amazon S3 and indexed in DynamoDB for fast retrieval and traceability.</li>
+          <li>Integrated PyMuPDF and pdfplumber to extract raw text, structured tables, and embedded images; applied LLaMA-3.2-90B-Vision-Instruct to generate descriptive captions for all visual elements.</li>
+          <li>Applied preprocessing steps to unify all modalities into text, segmented them into semantically meaningful chunks, and embedded them using SentenceTransformers for dense vector representation.</li>
+          <li>Engineered a vector-based retrieval mechanism using FAISS to match user queries with the most relevant content chunks and passed them to LLaMA-3.2-90B for context-aware answer generation.</li>
+          <li>Enabled fast, automated semantic search over academic documents, significantly improving answer quality and reducing manual effort in technical literature analysis.</li>
+</ul>
+
     </ul>
 
     <h4 class="text-xl font-semibold text-gray-800 mb-2 dark:text-gray-100">Core Technologies & Techniques:</h4>
     <div class="flex flex-wrap gap-2 mb-6">
       <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Python</span>
-      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">AWS Greengrass</span>
-      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">AWS Lambda</span>
-      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">AWS ECR</span>
-      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">AWS SQS</span>
-      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">MQTT</span>
-      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">MTCNN</span>
-      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">FaceNet</span>
-      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">PyTorch</span>
-      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Edge Computing</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">AWS S3</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">AWS DynamoDB</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">pdfplumber</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">PyMuPDF</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">FAISS</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">LLaMA-3.2-90B-Vision-Instruct</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">SentenceTransformers</span>
     </div>
 
   </div>
