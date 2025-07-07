@@ -273,7 +273,7 @@
             <ul class="list-disc list-outside space-y-3 text-gray-700 dark:text-gray-200 pl-6 mb-6 text-[15.3px] leading-relaxed">
                 <li>Developed a scalable internal framework to handle high-volume asynchronous requests from microservices by batching, storing them in PostgreSQL, and forwarding to a target API component—reducing processing latency by 40% and ensuring reliable message flow.</li>
                 <li>Optimized PostgreSQL query execution and REST API performance, enabling 3× higher concurrent throughput and cutting average response time by 60%, even under stress and production-level load.</li>
-                <li>Designed FIFO-based batch dispatch logic and improved I/O scheduling to maintain real-time responsiveness and streamline request routing without bottlenecks or database contention</li>
+                <li>Improved batch scheduling and I/O execution logic to ensure low-latency request processing, eliminate routing bottlenecks, and maintain consistent system performance under heavy traffic.</li>
                 <li>Engineered robust fault-tolerance mechanisms to detect malformed or incomplete JSON payloads, retry failed transactions, and eliminate crash scenarios—improving system resilience across edge cases.</li>
                 <li>Achieved 94% code coverage by implementing automated test suites using PyTest, simulating network delays, invalid payloads, and DB errors—reducing manual QA time by 15+ hours per week and catching 25+ critical bugs pre-release.</li>
             </ul>
