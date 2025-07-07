@@ -402,7 +402,7 @@
               <div class="flex space-x-4">
               <button
                 class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 transform hover:scale-105 dark:bg-blue-700 dark:hover:bg-blue-800"
-                data-modal-target="aiRecognitionModal">
+                data-modal-target="Edge-Cloud">
                 View Details
                </button>
                </div>
@@ -427,7 +427,7 @@
               <div class="flex space-x-4">
               <button
                 class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 transform hover:scale-105 dark:bg-blue-700 dark:hover:bg-blue-800"
-                data-modal-target="aiRecognitionModal">
+                data-modal-target="Cloud-Autoscaling">
                 View Details
              </button>
              </div>
@@ -453,7 +453,7 @@
               <div class="flex space-x-4">
               <button
                 class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 transform hover:scale-105 dark:bg-blue-700 dark:hover:bg-blue-800"
-                data-modal-target="aiRecognitionModal">
+                data-modal-target="RAG">
                 View Details
              </button>
              </div>
@@ -478,7 +478,7 @@
               <div class="flex space-x-4">
               <button
                 class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 transform hover:scale-105 dark:bg-blue-700 dark:hover:bg-blue-800"
-                data-modal-target="aiRecognitionModal">
+                data-modal-target="LLM">
                 View Details
              </button>
              </div>
@@ -504,7 +504,7 @@
               <div class="flex space-x-4">
               <button
                 class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 transform hover:scale-105 dark:bg-blue-700 dark:hover:bg-blue-800"
-                data-modal-target="aiRecognitionModal">
+                data-modal-target="Data-Visualization">
                 View Details
              </button>
              </div>
@@ -530,7 +530,7 @@
               <div class="flex space-x-4">
               <button
                 class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 transform hover:scale-105 dark:bg-blue-700 dark:hover:bg-blue-800"
-                data-modal-target="aiRecognitionModal">
+                data-modal-target="Predicting-PhysicalExcercise">
                 View Details
              </button>
                </div>
@@ -662,7 +662,7 @@
         </div>
     </footer>
 
-    <div id="aiRecognitionModal" class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50 hidden transition-opacity duration-300 opacity-0">
+    <div id="Edge-Cloud" class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50 hidden transition-opacity duration-300 opacity-0">
   <div class="bg-white rounded-lg shadow-xl p-6 w-full max-w-3xl max-h-[90vh] overflow-y-auto transform scale-95 transition-transform duration-300 dark:bg-gray-800 dark:text-gray-100">
     
     <div class="flex justify-between items-center mb-4">
@@ -699,6 +699,190 @@
   </div>
 </div>
 
+<div id="Cloud-Autoscaling" class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50 hidden transition-opacity duration-300 opacity-0">
+  <div class="bg-white rounded-lg shadow-xl p-6 w-full max-w-3xl max-h-[90vh] overflow-y-auto transform scale-95 transition-transform duration-300 dark:bg-gray-800 dark:text-gray-100">
+    
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-100">Edge-Cloud AI-Powered Face Recognition System</h2>
+      <button class="text-gray-500 hover:text-gray-700 text-2xl" data-modal-close>&times;</button>
+    </div>
+
+    <p class="text-gray-700 mb-4 dark:text-gray-200">
+      A real-time AI-powered face recognition system with intelligent edge processing, cloud-based inference, and event-driven communication.
+    </p>
+
+    <h4 class="text-xl font-semibold text-gray-800 mb-2 dark:text-gray-100">Key Highlights & Architecture:</h4>
+    <ul class="text-gray-700 list-disc list-outside pl-6 mb-6 dark:text-gray-200">
+      <li>Engineered a distributed edge-cloud architecture for real-time face recognition by deploying MTCNN-based face detection on an AWS IoT Greengrass Core (EC2) and FaceNet-based recognition on AWS Lambda, achieving 98.7% classification accuracy on live video frames.</li>
+      <li>Containerized all ML components using Docker and published to Amazon ECR, enabling lightweight and scalable deployment across edge (Greengrass) and cloud (Lambda) environments under a PaaS model optimized for event-driven execution.</li>
+      <li>Established a secure, low-latency messaging pipeline using MQTT 3.1.1 and TLS for edge-to-cloud communication, with PubSub and topic mapping to route base64-encoded frames from IoT clients to the Greengrass Core for pre-processing.</li>
+      <li>Reduced cloud workload by 40% by intelligently filtering “No-Face” inputs at the edge and sending only detected faces to the cloud for recognition, lowering Lambda invocation costs by 35% and ensuring faster response times for real-time use cases.</li>
+    </ul>
+
+    <h4 class="text-xl font-semibold text-gray-800 mb-2 dark:text-gray-100">Technologies Used:</h4>
+    <div class="flex flex-wrap gap-2 mb-6">
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Python</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">AWS Greengrass</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">AWS Lambda</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">AWS ECR</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">AWS SQS</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">MQTT</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">MTCNN</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">FaceNet</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">PyTorch</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Edge Computing</span>
+    </div>
+
+  </div>
+</div>
+
+<div id="RAG" class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50 hidden transition-opacity duration-300 opacity-0">
+  <div class="bg-white rounded-lg shadow-xl p-6 w-full max-w-3xl max-h-[90vh] overflow-y-auto transform scale-95 transition-transform duration-300 dark:bg-gray-800 dark:text-gray-100">
+    
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-100">Edge-Cloud AI-Powered Face Recognition System</h2>
+      <button class="text-gray-500 hover:text-gray-700 text-2xl" data-modal-close>&times;</button>
+    </div>
+
+    <p class="text-gray-700 mb-4 dark:text-gray-200">
+      A real-time AI-powered face recognition system with intelligent edge processing, cloud-based inference, and event-driven communication.
+    </p>
+
+    <h4 class="text-xl font-semibold text-gray-800 mb-2 dark:text-gray-100">Key Highlights & Architecture:</h4>
+    <ul class="text-gray-700 list-disc list-outside pl-6 mb-6 dark:text-gray-200">
+      <li>Engineered a distributed edge-cloud architecture for real-time face recognition by deploying MTCNN-based face detection on an AWS IoT Greengrass Core (EC2) and FaceNet-based recognition on AWS Lambda, achieving 98.7% classification accuracy on live video frames.</li>
+      <li>Containerized all ML components using Docker and published to Amazon ECR, enabling lightweight and scalable deployment across edge (Greengrass) and cloud (Lambda) environments under a PaaS model optimized for event-driven execution.</li>
+      <li>Established a secure, low-latency messaging pipeline using MQTT 3.1.1 and TLS for edge-to-cloud communication, with PubSub and topic mapping to route base64-encoded frames from IoT clients to the Greengrass Core for pre-processing.</li>
+      <li>Reduced cloud workload by 40% by intelligently filtering “No-Face” inputs at the edge and sending only detected faces to the cloud for recognition, lowering Lambda invocation costs by 35% and ensuring faster response times for real-time use cases.</li>
+    </ul>
+
+    <h4 class="text-xl font-semibold text-gray-800 mb-2 dark:text-gray-100">Technologies Used:</h4>
+    <div class="flex flex-wrap gap-2 mb-6">
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Python</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">AWS Greengrass</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">AWS Lambda</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">AWS ECR</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">AWS SQS</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">MQTT</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">MTCNN</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">FaceNet</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">PyTorch</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Edge Computing</span>
+    </div>
+
+  </div>
+</div>
+
+<div id="LLM" class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50 hidden transition-opacity duration-300 opacity-0">
+  <div class="bg-white rounded-lg shadow-xl p-6 w-full max-w-3xl max-h-[90vh] overflow-y-auto transform scale-95 transition-transform duration-300 dark:bg-gray-800 dark:text-gray-100">
+    
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-100">Edge-Cloud AI-Powered Face Recognition System</h2>
+      <button class="text-gray-500 hover:text-gray-700 text-2xl" data-modal-close>&times;</button>
+    </div>
+
+    <p class="text-gray-700 mb-4 dark:text-gray-200">
+      A real-time AI-powered face recognition system with intelligent edge processing, cloud-based inference, and event-driven communication.
+    </p>
+
+    <h4 class="text-xl font-semibold text-gray-800 mb-2 dark:text-gray-100">Key Highlights & Architecture:</h4>
+    <ul class="text-gray-700 list-disc list-outside pl-6 mb-6 dark:text-gray-200">
+      <li>Engineered a distributed edge-cloud architecture for real-time face recognition by deploying MTCNN-based face detection on an AWS IoT Greengrass Core (EC2) and FaceNet-based recognition on AWS Lambda, achieving 98.7% classification accuracy on live video frames.</li>
+      <li>Containerized all ML components using Docker and published to Amazon ECR, enabling lightweight and scalable deployment across edge (Greengrass) and cloud (Lambda) environments under a PaaS model optimized for event-driven execution.</li>
+      <li>Established a secure, low-latency messaging pipeline using MQTT 3.1.1 and TLS for edge-to-cloud communication, with PubSub and topic mapping to route base64-encoded frames from IoT clients to the Greengrass Core for pre-processing.</li>
+      <li>Reduced cloud workload by 40% by intelligently filtering “No-Face” inputs at the edge and sending only detected faces to the cloud for recognition, lowering Lambda invocation costs by 35% and ensuring faster response times for real-time use cases.</li>
+    </ul>
+
+    <h4 class="text-xl font-semibold text-gray-800 mb-2 dark:text-gray-100">Technologies Used:</h4>
+    <div class="flex flex-wrap gap-2 mb-6">
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Python</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">AWS Greengrass</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">AWS Lambda</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">AWS ECR</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">AWS SQS</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">MQTT</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">MTCNN</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">FaceNet</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">PyTorch</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Edge Computing</span>
+    </div>
+
+  </div>
+</div>
+
+<div id="Data-Visualization" class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50 hidden transition-opacity duration-300 opacity-0">
+  <div class="bg-white rounded-lg shadow-xl p-6 w-full max-w-3xl max-h-[90vh] overflow-y-auto transform scale-95 transition-transform duration-300 dark:bg-gray-800 dark:text-gray-100">
+    
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-100">Edge-Cloud AI-Powered Face Recognition System</h2>
+      <button class="text-gray-500 hover:text-gray-700 text-2xl" data-modal-close>&times;</button>
+    </div>
+
+    <p class="text-gray-700 mb-4 dark:text-gray-200">
+      A real-time AI-powered face recognition system with intelligent edge processing, cloud-based inference, and event-driven communication.
+    </p>
+
+    <h4 class="text-xl font-semibold text-gray-800 mb-2 dark:text-gray-100">Key Highlights & Architecture:</h4>
+    <ul class="text-gray-700 list-disc list-outside pl-6 mb-6 dark:text-gray-200">
+      <li>Engineered a distributed edge-cloud architecture for real-time face recognition by deploying MTCNN-based face detection on an AWS IoT Greengrass Core (EC2) and FaceNet-based recognition on AWS Lambda, achieving 98.7% classification accuracy on live video frames.</li>
+      <li>Containerized all ML components using Docker and published to Amazon ECR, enabling lightweight and scalable deployment across edge (Greengrass) and cloud (Lambda) environments under a PaaS model optimized for event-driven execution.</li>
+      <li>Established a secure, low-latency messaging pipeline using MQTT 3.1.1 and TLS for edge-to-cloud communication, with PubSub and topic mapping to route base64-encoded frames from IoT clients to the Greengrass Core for pre-processing.</li>
+      <li>Reduced cloud workload by 40% by intelligently filtering “No-Face” inputs at the edge and sending only detected faces to the cloud for recognition, lowering Lambda invocation costs by 35% and ensuring faster response times for real-time use cases.</li>
+    </ul>
+
+    <h4 class="text-xl font-semibold text-gray-800 mb-2 dark:text-gray-100">Technologies Used:</h4>
+    <div class="flex flex-wrap gap-2 mb-6">
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Python</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">AWS Greengrass</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">AWS Lambda</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">AWS ECR</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">AWS SQS</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">MQTT</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">MTCNN</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">FaceNet</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">PyTorch</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Edge Computing</span>
+    </div>
+
+  </div>
+</div>
+
+<div id="Predicting-PhysicalExcercise" class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50 hidden transition-opacity duration-300 opacity-0">
+  <div class="bg-white rounded-lg shadow-xl p-6 w-full max-w-3xl max-h-[90vh] overflow-y-auto transform scale-95 transition-transform duration-300 dark:bg-gray-800 dark:text-gray-100">
+    
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-100">Edge-Cloud AI-Powered Face Recognition System</h2>
+      <button class="text-gray-500 hover:text-gray-700 text-2xl" data-modal-close>&times;</button>
+    </div>
+
+    <p class="text-gray-700 mb-4 dark:text-gray-200">
+      A real-time AI-powered face recognition system with intelligent edge processing, cloud-based inference, and event-driven communication.
+    </p>
+
+    <h4 class="text-xl font-semibold text-gray-800 mb-2 dark:text-gray-100">Key Highlights & Architecture:</h4>
+    <ul class="text-gray-700 list-disc list-outside pl-6 mb-6 dark:text-gray-200">
+      <li>Engineered a distributed edge-cloud architecture for real-time face recognition by deploying MTCNN-based face detection on an AWS IoT Greengrass Core (EC2) and FaceNet-based recognition on AWS Lambda, achieving 98.7% classification accuracy on live video frames.</li>
+      <li>Containerized all ML components using Docker and published to Amazon ECR, enabling lightweight and scalable deployment across edge (Greengrass) and cloud (Lambda) environments under a PaaS model optimized for event-driven execution.</li>
+      <li>Established a secure, low-latency messaging pipeline using MQTT 3.1.1 and TLS for edge-to-cloud communication, with PubSub and topic mapping to route base64-encoded frames from IoT clients to the Greengrass Core for pre-processing.</li>
+      <li>Reduced cloud workload by 40% by intelligently filtering “No-Face” inputs at the edge and sending only detected faces to the cloud for recognition, lowering Lambda invocation costs by 35% and ensuring faster response times for real-time use cases.</li>
+    </ul>
+
+    <h4 class="text-xl font-semibold text-gray-800 mb-2 dark:text-gray-100">Technologies Used:</h4>
+    <div class="flex flex-wrap gap-2 mb-6">
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Python</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">AWS Greengrass</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">AWS Lambda</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">AWS ECR</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">AWS SQS</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">MQTT</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">MTCNN</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">FaceNet</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">PyTorch</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Edge Computing</span>
+    </div>
+
+  </div>
+</div>
 </div>
     <script>
     document.addEventListener('DOMContentLoaded', () => {
